@@ -1,5 +1,8 @@
 # Todo
 
+- Deployment
+	- Fix Vercel deployment
+	- Deploy to jussinevavuori.com
 - Header
 	- Social links
 	- Hover text
