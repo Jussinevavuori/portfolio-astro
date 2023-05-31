@@ -1,81 +1,129 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import {
+  CodeIcon,
+  CloudIcon,
+  PenToolIcon,
+  MapIcon,
+  Edit3Icon,
+} from "astro-feather";
+import GradientBackdrop from "src/components/GradientBackdrop.astro";
+import Layout from "../layouts/Layout.astro";
+import ButtonLink from "src/components/ButtonLink.astro";
+import ColorBubble from "src/components/ColorBubble.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout>
+  <main>
+    <!-- ------------------------------------------------------------------- -->
+    <!-- Hero -->
+    <!-- ------------------------------------------------------------------- -->
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+    <GradientBackdrop
+      eagerLoading
+      gradient="gradient-3"
+      fadeBottom
+      className="top-0"
+    />
+
+    <section class="pt-24">
+      <h1 class="relative text-3xl sm:text-6xl font-bold">
+        I'm <span class="text-primary-500">Jussi Nevavuori,</span>{" "}
+        fullstack web <span class="text-primary-500">developer</span>{" "}
+        and <span class="text-primary-500">designer.</span>
+      </h1>
+
+      <p class="pt-10 pb-16 text-sm sm:text-base text-black/70 leading-relaxed">
+        I design and create{" "}
+        <span class="text-primary-500 font-medium"
+          >functional and beautiful applications</span
+        >{" "}
+        with passion and a focus on{" "}
+        <span class="text-primary-500 font-medium">user experience</span>{" "}
+        and{" "}
+        <span class="text-primary-500 font-medium">high quality.</span>
+      </p>
+
+      <div class="flex items-center flex-wrap gap-y-4 gap-x-8">
+        <ButtonLink href="#contact" hasStartIcon>
+          <Edit3Icon />
+          Contact Me
+        </ButtonLink>
+        <ButtonLink href="/projects" variant="secondary">
+          View my Work
+        </ButtonLink>
+      </div>
+    </section>
+
+    <div class="h-48"></div>
+
+    <!-- ------------------------------------------------------------------- -->
+    <!-- Services -->
+    <!-- ------------------------------------------------------------------- -->
+
+    <section id="services" class="py-36">
+      <h2 class="relative text-4xl font-bold text-center">
+        The full product development stack.
+      </h2>
+
+      <p class="text-black/70 text-center pt-8 text-sm">
+        From designing the interface to implementing your fully featured
+        application - I can provide the full product design process from an idea
+        to a finished hiqh quality app, polished with fantastic design and
+        running on state of the art software.
+      </p>
+
+      <ul
+        class="flex flex-wrap items-center justify-center py-16 gap-x-8 gap-y-16"
+      >
+        <li class="max-w-xs flex flex-col items-center text-center">
+          <ColorBubble variant="indigo-violet">
+            <MapIcon stroke="white" />
+          </ColorBubble>
+          <p class="font-medium pb-3 pt-8">UX Design</p>
+          <p class="text-black/70 text-sm">
+            I create applications for real user to match their needs and
+            expectations, satisfy their needs and ease their lives.
+          </p>
+        </li>
+
+        <li class="max-w-xs flex flex-col items-center text-center">
+          <ColorBubble variant="pink-fuchsia">
+            <PenToolIcon stroke="white" />
+          </ColorBubble>
+          <p class="font-medium pb-3 pt-8">UI Design</p>
+          <p class="text-black/70 text-sm">
+            I design beautiful user interfaces for applications to work on all
+            screen sizes. Your colors, typography and more, all pixel perfect
+            and beautiful.
+          </p>
+        </li>
+
+        <li class="max-w-xs flex flex-col items-center text-center">
+          <ColorBubble variant="blue-sky">
+            <CodeIcon stroke="white" />
+          </ColorBubble>
+          <p class="font-medium pb-3 pt-8">Frontend Development</p>
+          <p class="text-black/70 text-sm">
+            I create functional, beautiful and responsive frontend applications
+            for the web with modern technologies.
+          </p>
+        </li>
+
+        <li class="max-w-xs flex flex-col items-center text-center">
+          <ColorBubble variant="emerald-teal">
+            <CloudIcon stroke="white" />
+          </ColorBubble>
+          <p class="font-medium pb-3 pt-8">Backend Development</p>
+          <p class="text-black/70 text-sm">
+            I build high-quality cloud-based backend services for your
+            applications to scale and host all your users.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ------------------------------------------------------------------- -->
+    <!-- Services -->
+    <!-- ------------------------------------------------------------------- -->
+  </main>
+</Layout>

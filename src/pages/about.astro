@@ -1,0 +1,299 @@
+---
+import Layout from "../layouts/Layout.astro";
+import srcMyImage from "../assets/images/me.png";
+import GradientBackdrop from "src/components/GradientBackdrop.astro";
+import { Image } from "@astrojs/image/components";
+import differenceInYears from "date-fns/differenceInYears/index.js";
+import musicalImg1 from "../assets/images/teekkarispeksi-2023-1.jpg";
+import musicalImg2 from "../assets/images/teekkarispeksi-2023-2.jpg";
+import musicalImg3 from "../assets/images/teekkarispeksi-2023-3.jpg";
+import climbImg1 from "../assets/images/climb-1.jpg";
+import runImg1 from "../assets/images/run-1.jpg";
+---
+
+<Layout subtitle="About me">
+  <div class="pt-16">
+    <GradientBackdrop
+      eagerLoading
+      gradient="gradient-3"
+      fadeBottom
+      className="top-0"
+    />
+
+    <h1 class="relative text-4xl font-bold text-center sm:text-start">
+      About Me
+    </h1>
+
+    <div
+      class="flex flex-col sm:flex-row py-24 gap-16 items-center sm:items-start"
+    >
+      <!-- ----------------------------------------------------------------- -->
+      <!-- Left -->
+      <!-- ----------------------------------------------------------------- -->
+
+      <div class="text-black/90">
+        <div
+          class:list={[
+            "flex-none overflow-hidden inline-flex items-center justify-center w-48 h-48",
+            "outline-1 outline-offset-2 outline-dashed rounded-full bg-gradient-to-br",
+            "outline-blue-500 from-purple-400 to-blue-400",
+          ]}
+        >
+          <Image
+            class="object-cover object-center"
+            src={srcMyImage}
+            alt="Me"
+            width={192}
+            height={192}
+          />
+        </div>
+
+        <div
+          class="px-2 py-1 rounded-full bg-gradient-to-br from-purple-400 to-indigo-400 flex items-center justify-center text-sm font-medium text-white"
+        >
+          Working at Vertics
+        </div>
+      </div>
+
+      <div class="text-black/80 space-y-6">
+        <!-- ----------------------------------------------------------------- -->
+        <!-- Start -->
+        <!-- ----------------------------------------------------------------- -->
+        <h2 class="text-xl font-medium text-black/90">
+          My name is Jussi Nevavuori.
+        </h2>
+
+        <p>
+          I'm {differenceInYears(new Date(), new Date("1999-07-05"))} years old.
+        </p>
+
+        <p>
+          I go by many titles. Fullstack Web Developer, UI Designer, UX
+          Designer. Depends on the project I'm working on.
+        </p>
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- Location -->
+        <!-- ----------------------------------------------------------------- -->
+        <div class="relative font-medium text-sm text-blue-500 translate-y-3">
+          Location
+          <span class="absolute left-0 top-0 -translate-x-6"> 🏠</span>
+        </div>
+
+        <p>
+          I'm based in the <strong class="font-semibold">Espoo, Finland</strong
+          >, within the Helsinki Region.
+        </p>
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- Studies -->
+        <!-- ----------------------------------------------------------------- -->
+        <div class="relative font-medium text-sm text-blue-500 translate-y-3">
+          Studies
+          <span class="absolute left-0 top-0 -translate-x-6"> 📖</span>
+        </div>
+
+        <p>
+          I have a <strong class="font-semibold"
+            >B.Sc. in Computer Science from Aalto University</strong
+          > and am currently studying and halfway done with my master's.
+        </p>
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- Experience -->
+        <!-- ----------------------------------------------------------------- -->
+        <div class="relative font-medium text-sm text-blue-500 translate-y-3">
+          Experience
+          <span class="absolute left-0 top-0 -translate-x-6">💼</span>
+        </div>
+
+        <p>
+          To see more of my experience in the form of projects I've designed,
+          developed and created, see <a
+            href="/projects"
+            class="underline text-blue-500">my projects</a
+          >.
+        </p>
+
+        <p
+          class="border-b border-black/10 !-mb-4 pb-2 flex items-center justify-between"
+        >
+          <span class="font-semibold">Vertics</span>
+          <span>2022 - Now</span>
+        </p>
+
+        <p>
+          Since summer of 2022, I have been working at <a
+            target="_blank"
+            rel="noreferrer"
+            rel="noopener"
+            href="https://vertics.co"
+            class="underline text-blue-500">Vertics</a
+          > as a fullstack web developer and designer. Go ahead, click the link.
+          I redesigned and developed their homepage.
+        </p>
+
+        <p
+          class="border-b border-black/10 !-mb-4 pb-2 flex items-center justify-between"
+        >
+          <span class="font-semibold">Ceon</span>
+          <span>2020 - 2022</span>
+        </p>
+
+        <p>
+          Before starting at Vertics, I worked as a fullstack web developer and
+          designer with <a
+            target="_blank"
+            rel="noreferrer"
+            rel="noopener"
+            href="https://www.ceon.fi/"
+            class="underline text-blue-500">Ceon</a
+          >.
+        </p>
+
+        <p
+          class="border-b border-black/10 !-mb-4 pb-2 flex items-center justify-between"
+        >
+          <span class="font-semibold">Graphic designer</span>
+          <span>2015 - 2020</span>
+        </p>
+
+        <p>
+          Before that I was a freelancer and hobbyist graphic designer alongside
+          high school and first years of university studies. I designed logos,
+          brand identities, posters and much more for multiple purposes. You can
+          find some of my work in my <a
+            target="_blank"
+            rel="noreferrer"
+            rel="noopener"
+            href="https://nevavuori.myportfolio.com/gallery"
+            class="underline text-blue-500">old graphic design portfolio</a
+          >.
+        </p>
+
+        <blockquote class="pl-4 border-l border-l-black/20 italic text-sm">
+          Honestly, I started all the way back working summers at my local
+          Hesburger and have since then sold electricity contacts and taught as
+          both a teaching assistant at Aalto University and as a substitute
+          teacher at Uudenkaupungin lukio.
+        </blockquote>
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- Freetime -->
+        <!-- ----------------------------------------------------------------- -->
+        <div class="relative font-medium text-sm text-blue-500 translate-y-3">
+          Freetime
+          <span class="absolute left-0 top-0 -translate-x-6"> 🎶</span>
+        </div>
+
+        <p>
+          I absolutely love <strong class="font-semibold"
+            >musical theatre</strong
+          > and all <strong class="font-semibold">music</strong>. I am a singer,
+          pianist, flute player and many other things from songwriter in secret
+          to actor in improvisation musical theatre.
+        </p>
+
+        <div class="flex flex-col gap-4 py-8">
+          <Image
+            class="rounded-lg shadow-lg ml-auto -z-[3]"
+            src={musicalImg3}
+            alt="Me playing Urho, the lead role of Teekkarispeksi 2023 - Univelka"
+            height={160}
+            aspectRatio={16 / 9}
+          />
+          <Image
+            class="rounded-lg shadow-lg ml-0 -mt-12 -z-[1]"
+            src={musicalImg2}
+            alt="Me playing Urho, the lead role of Teekkarispeksi 2023 - Univelka"
+            height={200}
+            aspectRatio={16 / 9}
+          />
+          <Image
+            class="rounded-lg shadow-lg ml-auto mr-16 -mt-12 -z-[2]"
+            src={musicalImg1}
+            alt="Me playing Urho, the lead role of Teekkarispeksi 2023 - Univelka"
+            height={140}
+            aspectRatio={16 / 9}
+          />
+          <p class="text-sm text-center text-black/60">
+            Me playing Urho, the lead role of Teekkarispeksi 2023 - Univelka.
+          </p>
+        </div>
+
+        <p>
+          I love sports, but my absolute favorites are <strong
+            class="font-semibold">bouldering</strong
+          >
+          and <strong class="font-semibold">running</strong>. My mentality in
+          sports is to have more fun than skill.
+        </p>
+
+        <div class="flex flex-col gap-4 py-8">
+          <Image
+            class="rounded-lg shadow-lg"
+            src={climbImg1}
+            alt="Me playing Urho, the lead role of Teekkarispeksi 2023 - Univelka"
+            height={160}
+            aspectRatio={16 / 9}
+          />
+          <Image
+            class="rounded-lg shadow-lg ml-auto -mt-16 -z-[1]"
+            src={runImg1}
+            alt="Me playing Urho, the lead role of Teekkarispeksi 2023 - Univelka"
+            height={160}
+            aspectRatio={16 / 9}
+          />
+          <p class="text-sm text-black/60 text-center">
+            Bouldering and running 5 km in the Aalto marathon event.
+          </p>
+        </div>
+
+        <p>
+          In addition, I am a creative person and love the medium of code. I end
+          up every now and then coming up with a new side project to work on, to
+          test the latest technologies on and just to have fun with.
+        </p>
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- Why I work-->
+        <!-- ----------------------------------------------------------------- -->
+        <div class="relative font-medium text-sm text-blue-500 translate-y-3">
+          Why I work
+          <span class="absolute left-0 top-0 -translate-x-6"> 💼</span>
+        </div>
+
+        <p>
+          I'm truly passionate about what I create. Because of this I strive to
+          build only high-quality products, both in terms of code quality and
+          user experience. It doesn't matter if it is a small personal project
+          or the largest customer project.
+        </p>
+
+        <p>
+          This means I promise to create products that satisfy not only my
+          clients and the end users but also me as a creator.
+        </p>
+
+        <p>
+          Seeing a product become real and having poured so much of my talent
+          and time into it never fails to bring me satisfaction.
+        </p>
+
+        <!-- ----------------------------------------------------------------- -->
+        <!-- What makes me happy-->
+        <!-- ----------------------------------------------------------------- -->
+        <div class="relative font-medium text-sm text-blue-500 translate-y-3">
+          What makes me happy?
+          <span class="absolute left-0 top-0 -translate-x-6"> 🤩</span>
+        </div>
+
+        <p>
+          The one thing that never fails to make me happy is being around the
+          people I love. I also live to listen to great music, especially to
+          dance and sing along to the greatest musical hits.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

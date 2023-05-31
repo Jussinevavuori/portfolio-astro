@@ -1,0 +1,29 @@
+---
+import ColorBubble from "./ColorBubble.astro";
+import ContactForm from "./ContactForm.astro";
+
+export interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section id="contact" class={className}>
+  <div
+    class="flex flex-col md:flex-row items-center gap-8 justify-center py-12"
+  >
+    <ColorBubble variant="pink-fuchsia">
+      <span class="text-2xl">💬</span>
+    </ColorBubble>
+    <h2 class="relative text-4xl font-bold text-center">Let's chat!</h2>
+  </div>
+
+  <p class="text-slate-600 text-sm max-w-sm mx-auto text-center pb-12">
+    Contact me about any work opportunities, projects, questions or feedback you
+    may have. Even if you just want to say hi. I always reply within 24 hours,
+    usually even faster!
+  </p>
+
+  <ContactForm />
+</section>

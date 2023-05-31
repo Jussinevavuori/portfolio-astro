@@ -1,36 +1,46 @@
 ---
+import "../styles/globals.css";
+import Footer from "src/components/Footer.astro";
+import Header from "../components/Header.astro";
+import ContactFormSection from "src/components/ContactFormSection.astro";
+import GradientBackdrop from "src/components/GradientBackdrop.astro";
+
 export interface Props {
-	title: string;
+  subtitle?: string;
 }
 
-const { title } = Astro.props;
+const { subtitle } = Astro.props;
+
+// Title
+const defaultTitle = "Jussi Nevavuori";
+const title = subtitle ? `${defaultTitle} | ${subtitle}` : defaultTitle;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="viewport"
+      content="minimum-scale=1, width=device-width, initial-scale=1"
+    />
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main class="min-h-screen mx-auto max-w-4xl px-10 py-8">
+      <slot />
+
+      <!-- Always include contact form -->
+      <GradientBackdrop gradient="gradient-5" fadeBottom fadeTop />
+      <hr class="translate-y-40 border-black/10" />
+      <ContactFormSection className="pt-80 pb-36" />
+    </main>
+    <Footer />
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>

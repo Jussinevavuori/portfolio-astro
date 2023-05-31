@@ -1,0 +1,36 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export interface Props extends HTMLAttributes<"a"> {
+  variant?: "primary" | "secondary" | "text";
+  fullWidth?: boolean;
+  hasStartIcon?: boolean;
+  hasEndIcon?: boolean;
+}
+const {
+  variant = "primary",
+  fullWidth,
+  hasStartIcon,
+  hasEndIcon,
+  ...anchorProps
+} = Astro.props;
+---
+
+<a
+  class:list={[
+    "relative py-3 rounded-lg font-medium flex items-center justify-center flex-row gap-3 transition-colors",
+    {
+      primary: "bg-primary-500 border border-primary-500 text-white",
+      secondary: "bg-transparent border border-primary-500 text-primary-600",
+      text: "",
+    }[variant],
+    hasStartIcon ? "pl-4" : "pl-5",
+    hasEndIcon ? "pr-4" : "pr-5",
+    fullWidth ? "w-full" : "",
+    "after:absolute after:-inset-px after:bg-primary-800 after:opacity-0 after:rounded-lg after:transition-opacity",
+    "hover:after:opacity-10 focus:after:opacity-10",
+  ]}
+  {...anchorProps}
+>
+  <slot />
+</a>

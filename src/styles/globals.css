@@ -1,0 +1,59 @@
+::-webkit-scrollbar {
+  width: 10px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #4ade80;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #22c55e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.absolute-centered {
+  display: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.table-remove-outer-borders table tbody tr:first-of-type td {
+  border-top: none !important;
+}
+.table-remove-outer-borders table tbody tr td:last-of-type {
+  border-right: none !important;
+}
+.table-remove-outer-borders table tbody tr td:first-of-type {
+  border-left: none !important;
+}
+.table-remove-outer-borders table tbody tr:last-of-type td {
+  border-bottom: none !important;
+}
+.table-remove-outer-borders table tbody tr:first-of-type th {
+  border-top: none !important;
+}
+.table-remove-outer-borders table tbody tr th:last-of-type {
+  border-right: none !important;
+}
+.table-remove-outer-borders table tbody tr th:first-of-type {
+  border-left: none !important;
+}
+.table-remove-outer-borders table tbody tr:last-of-type th {
+  border-bottom: none !important;
+}
+
+.prose-custom pre {
+  max-width: calc(100vw - 80px);
+  overflow-x: hidden;
+}
+.prose-custom pre div {
+  max-width: calc(100vw - 80px);
+  border-radius: inherit;
+  overflow-x: hidden;
+}

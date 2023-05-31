@@ -1,0 +1,66 @@
+---
+import { Image } from "@astrojs/image/components";
+import logo from "../assets/logos/logo.svg";
+
+const currentPathname = new URL(Astro.request.url).pathname;
+---
+
+<header
+  class="z-30 sticky top-0 left-0 right-0 px-6 transition-all md:px-12 py-4 flex items-center justify-between backdrop-blur-xl"
+>
+  {/* Reduce blur strength */}
+  <div
+    class="absolute inset-0 bg-white/80 border-b border-b-slate-100"
+    style={{ zIndex: -1 }}
+  >
+  </div>
+
+  <a rel="prefetch" href="/">
+    <div class="flex items-center gap-4">
+      <Image width={24} height={24} alt="Jussi Nevavuori Logo" src={logo} />
+      <span class="font-semibold text-xl">
+        J<span class="hidden lg:inline">ussi</span>
+        N<span class="hidden lg:inline">evavuori</span>
+      </span>
+    </div>
+  </a>
+
+  <nav
+    class="hidden lg:flex items-center text-sm font-medium divide-x divide-slate-200"
+  >
+    <div class="flex items-center gap-8 pr-6">
+      <a rel="prefetch" href="/">
+        <span
+          data-active={currentPathname === "/"}
+          class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
+        >
+          Home
+        </span>
+      </a>
+      <a rel="prefetch" href="/about">
+        <span
+          data-active={currentPathname.startsWith("/about")}
+          class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
+        >
+          About Me
+        </span>
+      </a>
+      <a rel="prefetch" href="/projects">
+        <span
+          data-active={currentPathname.startsWith("/projects")}
+          class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
+        >
+          My Work
+        </span>
+      </a>
+      <a rel="prefetch" href="/blog">
+        <span
+          data-active={currentPathname.startsWith("/blog")}
+          class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
+        >
+          Blog
+        </span>
+      </a>
+    </div>
+  </nav>
+</header>

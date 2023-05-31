@@ -1,0 +1,30 @@
+---
+import GradientBackdrop from "./GradientBackdrop.astro";
+import { Image } from "@astrojs/image/components";
+import logo from "../assets/logos/logo.svg";
+import { Icon } from "astro-icon";
+---
+
+<footer class="relative py-16 px-6">
+  <GradientBackdrop
+    gradient="gradient-2"
+    className="bottom-0 !h-[400px] opacity-30"
+    fadeTop
+  />
+  <div class="mx-auto max-w-4xl flex items-center flex-col gap-12">
+    <div class="flex items-center flex-col gap-4">
+      <div class="flex items-center gap-2">
+        <Image width={24} height={24} alt="Jussi Nevavuori Logo" src={logo} />
+      </div>
+      <p class="text-sm text-slate-700">© Jussi Nevavuori 2022</p>
+    </div>
+    <div class="flex items-center flex-col gap-4">
+      <div class="flex items-center gap-2 text-black">
+        <Icon name="simple-icons:svelte" width={24} height={24} />
+        <Icon name="simple-icons:vercel" width={24} height={24} />
+        <Icon name="simple-icons:astro" width={24} height={24} />
+      </div>
+      <p class="text-sm text-slate-700">Powered by Svelte, Vercel and Astro</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,53 @@
+---
+import { SendIcon } from "astro-feather";
+import Button from "./Button.astro";
+---
+
+<form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  class="mx-auto max-w-lg flex flex-col gap-4"
+>
+  <input
+    type="hidden"
+    name="access_key"
+    value="facfab56-acf7-4110-b6b4-d4f482b5ae6b"
+  />
+
+  <div class="flex flex-col gap-2">
+    <label for="input_name" class="text-slate-600 text-sm"> Name</label>
+    <input
+      class="border border-slate-200 rounded-lg px-2 py-2"
+      id="input_name"
+      type="text"
+      name="name"
+      required
+    />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="input_email" class="text-slate-600 text-sm"> Email</label>
+    <input
+      class="border border-slate-200 rounded-lg px-2 py-2"
+      id="input_email"
+      type="email"
+      name="email"
+      required
+    />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="input_message" class="text-slate-600 text-sm"> Message</label>
+    <textarea
+      class="border border-slate-200 rounded-lg px-2 py-2"
+      id="input_message"
+      rows={10}
+      name="message"
+      required></textarea>
+  </div>
+
+  <Button type="submit" class="mt-4" hasEndIcon>
+    Send
+    <SendIcon />
+  </Button>
+</form>

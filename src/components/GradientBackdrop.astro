@@ -1,0 +1,60 @@
+---
+import { Image } from "@astrojs/image/components";
+import { twMerge } from "tailwind-merge";
+import gradient2 from "../assets/images/gradient-2.png";
+import gradient3 from "../assets/images/gradient-3.png";
+import gradient4 from "../assets/images/gradient-4.png";
+import gradient5 from "../assets/images/gradient-5.png";
+
+export interface Props {
+  gradient: "gradient-2" | "gradient-3" | "gradient-4" | "gradient-5";
+  fadeTop?: boolean;
+  eagerLoading?: boolean;
+  fadeBottom?: boolean;
+  className?: string;
+}
+
+const { gradient, eagerLoading, fadeTop, fadeBottom, className } = Astro.props;
+
+const gradients: Record<
+  Props["gradient"],
+  { src: ImageMetadata; width: number; height: number }
+> = {
+  "gradient-2": { src: gradient2, width: 320, height: 213 },
+  "gradient-3": { src: gradient3, width: 320, height: 213 },
+  "gradient-4": { src: gradient4, width: 320, height: 200 },
+  "gradient-5": { src: gradient5, width: 320, height: 213 },
+};
+
+const { src, width, height } = gradients[gradient];
+---
+
+<div
+  class={twMerge(
+    "absolute w-full left-0 h-screen -z-10 opacity-15 border-b border-b-slate-200",
+    className
+  )}
+>
+  <Image
+    class="w-full h-full object-cover object-center"
+    src={src}
+    alt="Gradient"
+    format="webp"
+    quality={50}
+    loading={eagerLoading ? "eager" : "lazy"}
+    width={width}
+    height={height}
+  />
+
+  {
+    fadeTop && (
+      <div class="absolute left-0 right-0 top-0 h-72 bg-gradient-to-b from-white" />
+    )
+  }
+
+  {
+    fadeBottom && (
+      <div class="absolute left-0 right-0 bottom-0 h-72 bg-gradient-to-t from-white" />
+    )
+  }
+</div>

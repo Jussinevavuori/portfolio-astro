@@ -1,0 +1,30 @@
+---
+export interface Props {
+  variant?:
+    | "primary"
+    | "indigo-violet"
+    | "pink-fuchsia"
+    | "blue-sky"
+    | "emerald-teal";
+  className?: string;
+}
+
+const { variant = "primary", className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "flex-none overflow-hidden inline-flex items-center justify-center w-14 h-14",
+    "outline-1 outline-offset-2 outline-dashed rounded-full bg-gradient-to-br",
+    {
+      primary: "outline-primary-500 bg-primary-200",
+      "indigo-violet": "outline-indigo-500 from-violet-400 to-indigo-400",
+      "pink-fuchsia": "outline-pink-500 from-fuchsia-400 to-pink-400",
+      "blue-sky": "outline-blue-500 from-sky-400 to-blue-400",
+      "emerald-teal": "outline-emerald-500 from-teal-400 to-emerald-400",
+    }[variant],
+    className,
+  ]}
+>
+  <slot />
+</div>
