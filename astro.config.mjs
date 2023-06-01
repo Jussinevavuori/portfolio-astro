@@ -13,5 +13,8 @@ export default defineConfig({
 		// serviceEntryPoint: '@astrojs/image/sharp'
 	}), svelte()],
 	output: "hybrid",
-	adapter: vercel()
+	adapter: vercel(),
+	experimental: {
+		hybridOutput: true,
+	}
 });
