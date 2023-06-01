@@ -9,9 +9,13 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind(), sitemap(), prefetch(), image({
-		// serviceEntryPoint: '@astrojs/image/sharp'
-	}), svelte()],
+	integrations: [
+		tailwind(),
+		sitemap(),
+		prefetch(),
+		image({ serviceEntryPoint: '@astrojs/image/sharp' }),
+		svelte()
+	],
 	output: "hybrid",
 	adapter: vercel(),
 	experimental: {

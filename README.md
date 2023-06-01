@@ -1,14 +1,11 @@
 # Todo
 
 - Deployment
-	- Fix Vercel deployment
 	- Deploy to jussinevavuori.com
 - Header
-	- Social links
-	- Hover text
 	- Mobile menu
 - Head
-	- Copy all meta links
+	- OG images
 - Projects
 	- Data model and fetching
 	- Projects page

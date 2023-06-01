@@ -1,6 +1,8 @@
 ---
 import { Image } from "@astrojs/image/components";
 import logo from "../assets/logos/logo.svg";
+import { Icon } from "astro-icon";
+import HeaderHoverText from "./HeaderHoverText.svelte";
 
 const currentPathname = new URL(Astro.request.url).pathname;
 ---
@@ -61,6 +63,74 @@ const currentPathname = new URL(Astro.request.url).pathname;
           Blog
         </span>
       </a>
+    </div>
+
+    <div class="relative flex items-center gap-6 pl-6">
+      <a
+        data-hover-text="Mail;jussi@nevavuori.fi"
+        href="mailto:jussi@nevavuori.fi"
+      >
+        <Icon
+          width={20}
+          height={20}
+          name="simple-icons:gmail"
+          class="fill-slate-800 hover:fill-primary-500"
+        />
+      </a>
+      <a
+        data-hover-text="GitHub;Jussinevavuori"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/Jussinevavuori"
+      >
+        <Icon
+          width={20}
+          height={20}
+          name="simple-icons:github"
+          class="fill-slate-800 hover:fill-primary-500"
+        />
+      </a>
+      <a
+        data-hover-text="LinkedIn;Jussi Nevavuori"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/jussinevavuori/"
+      >
+        <Icon
+          width={20}
+          height={20}
+          name="simple-icons:linkedin"
+          class="fill-slate-800 hover:fill-primary-500"
+        />
+      </a>
+      <a
+        data-hover-text="Twitter;@jussinevavuori"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://twitter.com/jussinevavuori"
+      >
+        <Icon
+          width={20}
+          height={20}
+          name="simple-icons:twitter"
+          class="fill-slate-800 hover:fill-primary-500"
+        />
+      </a>
+      <a
+        data-hover-text="Dev.to;Jussinevavuori"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://dev.to/jussinevavuori"
+      >
+        <Icon
+          width={20}
+          height={20}
+          name="simple-icons:devdotto"
+          class="fill-slate-800 hover:fill-primary-500"
+        />
+      </a>
+
+      <HeaderHoverText client:only="svelte" />
     </div>
   </nav>
 </header>
