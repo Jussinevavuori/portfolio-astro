@@ -12,6 +12,6 @@ export default defineConfig({
 	integrations: [tailwind(), sitemap(), prefetch(), image({
 		// serviceEntryPoint: '@astrojs/image/sharp'
 	}), svelte()],
-	output: "server",
+	output: "hybrid",
 	adapter: vercel()
 });
