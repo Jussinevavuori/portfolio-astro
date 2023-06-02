@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import ColorBubble from "./ColorBubble.astro";
+import { Image } from "@astrojs/image/components";
+import { UserIcon } from "astro-feather";
+import { Icon } from "astro-icon";
+
+const allRecommendations = await getCollection("recommendations");
+---
+
+<ul
+  class="flex flex-row flex-wrap items-center justify-center py-16 gap-x-8 gap-y-16"
+>
+  {
+    allRecommendations.map((recommendation) => (
+      <li class="max-w-xs flex flex-col items-center">
+        <div class="flex gap-8 pb-6">
+          <ColorBubble className="relative">
+            {recommendation.data.image ? (
+              <Image
+                class="w-full h-full object-cover absolute"
+                src={recommendation.data.image}
+                height={200}
+                aspectRatio={1 / 1}
+                loading="lazy"
+                alt={recommendation.data.name}
+              />
+            ) : (
+              <UserIcon stroke="white" />
+            )}
+          </ColorBubble>
+          <div>
+            <p class="font-medium">{recommendation.data.name}</p>
+            <p class="text-sm text-black/60">{recommendation.data.title}</p>
+          </div>
+        </div>
+        <p class="text-black/70 text-sm">
+          <span class="float-left -ml-2 -mt-2 pr-2 text-primary-500">
+            <Icon name="ri:double-quotes-r" width={60} height={60} />
+          </span>
+          {recommendation.body}
+        </p>
+      </li>
+    ))
+  }
+</ul>

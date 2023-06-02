@@ -1,29 +1,26 @@
 # Todo
 
 - Deployment
-	- Deploy to jussinevavuori.com
+  - Deploy to jussinevavuori.com
 - Header
-	- Mobile menu
+  - Mobile menu
 - Head
-	- OG images
+  - OG images
 - Projects
-	- Data model and fetching
-	- Projects page
-	- Project page
-	- Recent projects section
-- New projects
-	- Gearhead
-	- Vertics homepage
-	- Update homepage project
+  - List new projects
+    - Gearhead
+    - Vertics homepage
+    - Update portfolio project
+  - Projects page
+  - Project page
+  - Recent projects section
 - Blog
-	- Data model and fetching
-	- Blogs page
-	- Blog page
-	- Recent blogs section
-- Recommendations
-	- Data model and fetching
-	- Front page section
+  - Data model and fetching
+  - Blogs page
+  - Blog page
+  - Recent blogs section
 - Technologies
-	- List
-	- Front page section
-	- Projects section
+  - List
+  - Front page section
+  - Projects section
+- 404 page

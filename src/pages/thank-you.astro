@@ -1,0 +1,79 @@
+---
+import {
+  CodeIcon,
+  CloudIcon,
+  PenToolIcon,
+  MapIcon,
+  ArrowLeftIcon,
+} from "astro-feather";
+import ButtonLink from "src/components/ButtonLink.astro";
+import GradientBackdrop from "src/components/GradientBackdrop.astro";
+import Layout from "src/layouts/Layout.astro";
+import ColorBubble from "src/components/ColorBubble.astro";
+import Recommendations from "src/components/Recommendations.astro";
+import { getCollection } from "astro:content";
+import ProjectOverview from "src/components/ProjectOverview.astro";
+
+const allProjects = await getCollection("projects");
+const recommendedProjects = allProjects
+  .filter((project) => project.data.hasPage)
+  .sort((a, b) => b.data.priority - a.data.priority)
+  .slice(0, 3);
+---
+
+<Layout subtitle="Thank you" hideContactForm>
+  <main>
+    <GradientBackdrop
+      eagerLoading
+      gradient="gradient-3"
+      fadeBottom
+      className="top-0"
+    />
+
+    <section class="pt-24">
+      <h1 class="relative text-3xl sm:text-6xl font-bold">Thank you!</h1>
+
+      <p class="pt-10 pb-16 text-sm sm:text-base text-black/70 leading-relaxed">
+        I have received your message and will answer as soon as possible! I
+        design and create{" "}
+        <span class="text-primary-500 font-medium"
+          >functional and beautiful applications</span
+        >{" "}
+        with passion and a focus on{" "}
+        <span class="text-primary-500 font-medium">user experience</span>{" "}
+        and{" "}
+        <span class="text-primary-500 font-medium">high quality.</span>
+      </p>
+
+      <div class="flex items-center flex-wrap gap-y-4 gap-x-8">
+        <ButtonLink href="/projects" hasStartIcon>
+          <ArrowLeftIcon />
+          Back to home page
+        </ButtonLink>
+      </div>
+    </section>
+
+    <div class="h-48"></div>
+
+    <!-- ------------------------------------------------------------------- -->
+    <!-- Projects -->
+    <!-- ------------------------------------------------------------------- -->
+
+    <section id="recommended-projects" class="py-36">
+      <h2 class="relative text-4xl font-bold text-center">Recent projects.</h2>
+
+      <p class="text-black/70 text-sm text-center pt-8">
+        View projects I have done in the past which best represent my talent.
+      </p>
+
+      <div class="flex flex-col gap-24 pt-16">
+        {
+          recommendedProjects.map((project) => (
+            <ProjectOverview project={project} />
+          ))
+        }
+        <ButtonLink href="/projects" fullWidth>View all projects</ButtonLink>
+      </div>
+    </section>
+  </main>
+</Layout>

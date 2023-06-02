@@ -13,6 +13,9 @@ module.exports = {
 			},
 			opacity: {
 				15: "15%"
+			},
+			transitionDuration: {
+				50: "50ms",
 			}
 		},
 	},

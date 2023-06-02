@@ -20,10 +20,8 @@ const currentPathname = new URL(Astro.request.url).pathname;
   <a rel="prefetch" href="/">
     <div class="flex items-center gap-4">
       <Image width={24} height={24} alt="Jussi Nevavuori Logo" src={logo} />
-      <span class="font-semibold text-xl">
-        J<span class="hidden lg:inline">ussi</span>
-        N<span class="hidden lg:inline">evavuori</span>
-      </span>
+      <span class="font-semibold text-xl hidden lg:block">Jussi Nevavuori</span>
+      <span class="font-semibold text-xl lg:hidden">JN</span>
     </div>
   </a>
 

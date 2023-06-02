@@ -1,0 +1,146 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "@astrojs/image/components";
+import { Icon } from "astro-icon";
+import {
+  ArrowRightIcon,
+  CalendarIcon,
+  UserIcon,
+  UsersIcon,
+} from "astro-feather";
+import { formatTimeline } from "../utils/formatTimeline";
+import { capitalize } from "../utils/capitalize";
+import { getProjectEmoji } from "../utils/getProjectEmoji";
+import ButtonLink from "./ButtonLink.astro";
+import { getTechnologyIconName } from "src/utils/getTechnologyIconName";
+
+export interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<div class="flex flex-col gap-8">
+  {
+    project.data.hasPage ? (
+      <a
+        href={`/projects/${project.slug}`}
+        class="relative overflow-hidden block w-full rounded-2xl border h-[200px] sm:h-[400px]"
+      >
+        <div class="relative w-full h-full">
+          <Image
+            class="w-full h-full object-cover rounded-2xl opacity-100"
+            src={project.data.image}
+            alt={project.data.title}
+            loading="lazy"
+            height={400}
+            width={800}
+          />
+          <div class="bg-gradient-to-tr from-indigo-400 via-fuchsia-400 to-yellow-400 opacity-15 hover:opacity-30 duration-300 hover:duration-0 transition-opacity absolute inset-0" />
+        </div>
+      </a>
+    ) : (
+      <span class="relative overflow-hidden block w-full rounded-2xl border h-[160px] sm:h-[200px]">
+        <div class="relative w-full h-full">
+          <Image
+            class="w-full h-full object-cover rounded-2xl opacity-100"
+            src={project.data.image}
+            alt={project.data.title}
+            loading="lazy"
+            height={200}
+            width={400}
+          />
+          <div class="bg-gradient-to-tr from-indigo-400 via-fuchsia-400 to-yellow-400 opacity-15 absolute inset-0" />
+        </div>
+      </span>
+    )
+  }
+  <div class="flex flex-col items-stretch justify-end">
+    <div class="flex flex-wrap items-start justify-between">
+      <h3 class="text-xl font-semibold">
+        {project.data.title}
+      </h3>
+      {
+        project.data.githubUrl && (
+          <a
+            href={project.data.githubUrl}
+            class="hover:outline outline-offset-2 outline-primary-400 rounded-full"
+          >
+            <Icon name="simple-icons:github" size={24} width={24} />
+          </a>
+        )
+      }
+    </div>
+    <p class="pt-1 text-sm text-slate-500 font-light flex flex-wrap gap-4">
+      <span class="flex gap-2 items-center">
+        <span>
+          <CalendarIcon size={16} />
+        </span>
+        {formatTimeline(project.data.startDate, project.data.endDate)}
+      </span>
+      <span class="flex gap-2 items-center">
+        <span>
+          {
+            project.data.teamSize > 1 ? (
+              <UsersIcon size={16} />
+            ) : (
+              <UserIcon size={16} />
+            )
+          }
+        </span>
+        {project.data.teamSize}
+      </span>
+      <span class="flex gap-2 items-center">
+        <span>
+          {getProjectEmoji(project.data.type)}
+        </span>
+        {capitalize(project.data.type)}
+      </span>
+    </p>
+    <p class="pt-3 text-slate-800 font-light text-sm">
+      {project.data.description}
+    </p>
+    <ul
+      class="pt-6 flex items-center gap-3 flex-wrap text-sm text-slate-500 font-light"
+    >
+      {
+        project.data.technologies.map((c) => (
+          <li class="flex items-center gap-2">
+            <iconify-icon icon={getTechnologyIconName(c)} />
+            {c}
+          </li>
+        ))
+      }
+    </ul>
+
+    {
+      project.data.hasPage && (
+        <div class="flex flex-wrap gap-4 items-center justify-between pt-8">
+          <ButtonLink
+            href={`/projects/${project.slug}`}
+            aria-label="Read more about this project"
+          >
+            <span>
+              Read more
+              <span class="hidden">about this project</span>
+            </span>
+            <ArrowRightIcon />
+          </ButtonLink>
+          {project.data.projectUrl && (
+            <ButtonLink
+              href={project.data.projectUrl}
+              rel="noreferrer noopener"
+              target="_blank"
+              variant="secondary"
+              hasEndIcon
+            >
+              Visit project
+            </ButtonLink>
+          )}
+        </div>
+      )
+    }
+  </div>
+</div>

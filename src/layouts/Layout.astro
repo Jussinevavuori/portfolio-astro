@@ -16,9 +16,10 @@ with passion and a focus on user experience and high quality
 export interface Props {
   subtitle?: string;
   description?: string;
+  hideContactForm?: boolean;
 }
 
-const { subtitle, description } = Astro.props;
+const { subtitle, description, hideContactForm } = Astro.props;
 
 // Title
 const defaultTitle = "Jussi Nevavuori";
@@ -73,16 +74,27 @@ const title = subtitle ? `${defaultTitle} | ${subtitle}` : defaultTitle;
 
     <!-- Web3forms external script -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
+
+    <!-- Support <iconify-icon /> -->
+    <script
+      src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
+    ></script>
   </head>
   <body>
     <Header />
     <main class="min-h-screen mx-auto max-w-4xl px-10 py-8">
       <slot />
 
-      <!-- Always include contact form -->
-      <GradientBackdrop gradient="gradient-5" fadeBottom fadeTop />
-      <hr class="translate-y-40 border-black/10" />
-      <ContactFormSection className="pt-80 pb-36" />
+      <!-- Always include contact form, except when hideContactForm=true -->
+      {
+        !hideContactForm && (
+          <>
+            <GradientBackdrop gradient="gradient-5" fadeBottom fadeTop />
+            <hr class="translate-y-40 border-black/10" />
+            <ContactFormSection className="pt-80 pb-36" />
+          </>
+        )
+      }
     </main>
     <Footer />
   </body>
