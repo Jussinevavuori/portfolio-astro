@@ -73,7 +73,7 @@ const { Content } = await project.render();
         )
       }
     </div>
-    <p class="pt-1 text-sm text-slate-500 font-light flex flex-wrap gap-4">
+    <p class="pt-1 text-sm text-black/50 flex flex-wrap gap-4">
       <span class="flex gap-2 items-center">
         <span>
           <CalendarIcon size={16} />
@@ -96,15 +96,15 @@ const { Content } = await project.render();
         <span>
           {getProjectEmoji(project.data.type)}
         </span>
-        {capitalize(project.data.type)}
+        <span>
+          {capitalize(project.data.type)}
+        </span>
       </span>
     </p>
-    <p class="pt-3 text-slate-800 font-light text-sm">
+    <p class="pt-3 text-black/80 text-sm">
       {project.data.description}
     </p>
-    <ul
-      class="pt-6 flex items-center gap-3 flex-wrap text-sm text-slate-500 font-light"
-    >
+    <ul class="pt-6 flex items-center gap-3 flex-wrap text-sm text-black/50">
       {
         project.data.technologies.map((c) => (
           <li class="flex items-center gap-2">

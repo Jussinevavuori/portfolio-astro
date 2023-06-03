@@ -1,0 +1,32 @@
+---
+import { HomeIcon } from "astro-feather";
+import ButtonLink from "src/components/ButtonLink.astro";
+import ColorBubble from "src/components/ColorBubble.astro";
+import Layout from "src/layouts/Layout.astro";
+
+const currentPathname = new URL(Astro.request.url).pathname;
+---
+
+<Layout subtitle="Not found 🔎">
+  <main>
+    <div class="pt-24 flex flex-col items-center gap-8">
+      <ColorBubble variant="indigo-violet" className="mb-8">
+        <span class="text-2xl">🔎</span>
+      </ColorBubble>
+
+      <h1 class="relative text-4xl font-bold text-center">
+        You seem to be lost?
+      </h1>
+
+      <p class="text-black/80 text-sm text-center max-w-md mx-auto">
+        The page at <b class="font-semibold font-mono">{currentPathname}</b>
+        could not be found or it does not exist.
+      </p>
+
+      <ButtonLink hasStartIcon href="/">
+        <HomeIcon />
+        Go back home
+      </ButtonLink>
+    </div>
+  </main>
+</Layout>

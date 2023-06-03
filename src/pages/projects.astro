@@ -1,9 +1,79 @@
 ---
+import GradientBackdrop from "src/components/GradientBackdrop.astro";
 import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import ProjectOverview from "src/components/ProjectOverview.astro";
+import ColorBubble from "src/components/ColorBubble.astro";
+import ButtonLink from "src/components/ButtonLink.astro";
+import { PenToolIcon } from "astro-feather";
+
+const allProjects = await getCollection("projects");
+
+const projectsWithPages = [...allProjects]
+  .filter((project) => project.data.hasPage)
+  .sort((a, b) => b.data.priority - a.data.priority);
+
+const projectsWithoutPages = [...allProjects]
+  .filter((project) => !project.data.hasPage)
+  .sort((a, b) => b.data.priority - a.data.priority);
 ---
 
-<Layout subtitle="Projects">
-  <main>
-    <h1>Projects</h1>
+<Layout subtitle="My Work">
+  <main class="pt-16">
+    <GradientBackdrop gradient="gradient-3" fadeBottom className="top-0" />
+
+    <h1 class="relative text-4xl font-bold text-center">My work</h1>
+
+    <p class="text-black/70 text-sm text-center pt-8 max-w-md mx-auto">
+      From client projects to personal sites, here you can find a a portfolio of
+      my projects that best reflect my ability to both design and create full
+      scale applications.
+    </p>
+
+    <div class="flex flex-col gap-24 pt-16">
+      {
+        projectsWithPages.map((project) => (
+          <ProjectOverview project={project} />
+        ))
+      }
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-24 pt-24">
+      {
+        projectsWithoutPages.map((project) => (
+          <ProjectOverview project={project} />
+        ))
+      }
+    </div>
+
+    <section id="graphic-design" class="flex flex-col items-center pt-80 pb-24">
+      <div
+        class="flex flex-col md:flex-row items-center gap-8 justify-center pt-12"
+      >
+        <ColorBubble variant="pink-fuchsia">
+          <span class="text-2xl">🎨</span>
+        </ColorBubble>
+        <h2 class="relative text-4xl font-bold text-center">
+          Graphic design portfolio
+        </h2>
+      </div>
+
+      <p class="text-black/70 text-sm text-center pt-8 max-w-md">
+        Before becoming a developer, I used to be a graphic designer. From here
+        you can view an older portfolio page containing some of my graphic
+        design work.
+      </p>
+
+      <div class="mt-12">
+        <ButtonLink
+          hasStartIcon
+          rel="noreferrer noopener"
+          target="_blank"
+          href="https://nevavuori.myportfolio.com/gallery"
+        >
+          <PenToolIcon />
+          Graphic Design Portfolio
+        </ButtonLink>
+      </div>
+    </section>
   </main>
 </Layout>

@@ -1,0 +1,135 @@
+---
+import { Image } from "@astrojs/image/components";
+import {
+  ArrowLeftIcon,
+  CalendarIcon,
+  GithubIcon,
+  UserIcon,
+  UsersIcon,
+} from "astro-feather";
+import { CollectionEntry, getCollection, getEntry } from "astro:content";
+import GradientBackdrop from "src/components/GradientBackdrop.astro";
+import Layout from "src/layouts/Layout.astro";
+import { formatTimeline } from "src/utils/formatTimeline";
+import { capitalize } from "src/utils/capitalize";
+import { getProjectEmoji } from "src/utils/getProjectEmoji";
+import { getTechnologyIconName } from "src/utils/getTechnologyIconName";
+import ButtonLink from "src/components/ButtonLink.astro";
+import { Icon } from "astro-icon";
+
+export interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+export async function getStaticPaths() {
+  const allProjects = await getCollection("projects");
+  return allProjects
+    .filter((project) => project.data.hasPage)
+    .map((project) => ({
+      params: { projectSlug: project.slug },
+      props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<Layout subtitle={project.data.title}>
+  <main>
+    <GradientBackdrop gradient="gradient-3" fadeBottom className="top-0" />
+
+    <div class="relative w-full h-full mb-12">
+      <Image
+        class="w-full h-full object-cover rounded-2xl opacity-100"
+        src={project.data.image}
+        alt={project.data.title}
+        loading="lazy"
+        height={400}
+        width={800}
+      />
+      <div
+        class="bg-gradient-to-tr rounded-2xl from-indigo-400 via-fuchsia-400 to-yellow-400 opacity-15 hover:opacity-30 duration-300 hover:duration-0 transition-opacity absolute inset-0"
+      >
+      </div>
+    </div>
+
+    <div class="flex flex-col items-stretch justify-end">
+      <div class="flex items-start justify-between">
+        <h3 class="relative text-xl font-semibold">
+          {project.data.title}
+        </h3>
+        {
+          project.data.githubUrl && (
+            <a
+              href={project.data.githubUrl}
+              class="hover:outline outline-offset-2 outline-primary-400 rounded-full"
+            >
+              <Icon name="simple-icons:github" size={24} width={24} />
+            </a>
+          )
+        }
+      </div>
+      <p class="pt-1 text-sm text-black/50 flex flex-wrap gap-4">
+        <span class="flex gap-2 items-center">
+          <span>
+            <CalendarIcon size={16} />
+          </span>
+          {formatTimeline(project.data.startDate, project.data.endDate)}
+        </span>
+        <span class="flex gap-2 items-center">
+          <span>
+            {
+              project.data.teamSize > 1 ? (
+                <UsersIcon size={16} />
+              ) : (
+                <UserIcon size={16} />
+              )
+            }
+          </span>
+          {project.data.teamSize}
+        </span>
+        <span class="flex gap-2 items-center">
+          <span>
+            {getProjectEmoji(project.data.type)}
+          </span>
+          <span>
+            {capitalize(project.data.type)}
+          </span>
+        </span>
+      </p>
+      <p class="pt-3 text-black/80 text-sm">
+        {project.data.description}
+      </p>
+      <ul class="pt-6 flex items-center gap-3 flex-wrap text-sm text-black/50">
+        {
+          project.data.technologies.map((c) => (
+            <li class="flex items-center gap-2">
+              <iconify-icon icon={getTechnologyIconName(c)} />
+              {c}
+            </li>
+          ))
+        }
+      </ul>
+      {
+        project.data.projectUrl && (
+          <div class="flex items-center justify-between pt-8">
+            <ButtonLink
+              href={project.data.projectUrl}
+              rel="noreferrer noopener"
+              target="_blank"
+              variant="secondary"
+              hasEndIcon
+            >
+              Visit project
+            </ButtonLink>
+          </div>
+        )
+      }
+    </div>
+
+    <div class="py-24 prose max-w-none">
+      <Content />
+    </div>
+  </main>
+</Layout>

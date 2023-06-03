@@ -4,14 +4,10 @@
   - Deploy to jussinevavuori.com
 - Head
   - OG images
-- Projects
-  - List new projects
-    - Gearhead
-    - Vertics homepage
-    - Update portfolio project
-  - Projects page
-  - Project page
-  - Recent projects section
+- List new projects
+  - Gearhead
+  - Vertics homepage
+  - Update portfolio project
 - Blog
   - Data model and fetching
   - Blogs page
@@ -21,4 +17,3 @@
   - List
   - Front page section
   - Projects section
-- 404 page
