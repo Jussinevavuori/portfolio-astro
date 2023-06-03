@@ -2,8 +2,6 @@
 
 - Deployment
   - Deploy to jussinevavuori.com
-- Header
-  - Mobile menu
 - Head
   - OG images
 - Projects
