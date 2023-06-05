@@ -1,9 +1,41 @@
 ---
+import BlogPreview from "src/components/BlogPreview.astro";
 import Layout from "../layouts/Layout.astro";
+import GradientBackdrop from "src/components/GradientBackdrop.astro";
+import { getCollection } from "astro:content";
+
+const blogs = await getCollection("blog");
 ---
 
 <Layout subtitle="Blog">
-  <main>
-    <h1>Blog</h1>
+  <main class="pt-16">
+    <GradientBackdrop gradient="gradient-3" fadeBottom className="top-0" />
+
+    <h1 class="relative text-4xl font-bold">Blog</h1>
+
+    <p class="text-black/70 text-sm pt-8 max-w-md">
+      Posts on technology, coding, development and more. All my posts can also
+      be found on{" "}
+      <a
+        href="https://dev.to/jussinevavuori"
+        class="underline decoration-primary-500 underline-offset-2 hover:decoration-primary-600 visited:decoration-purple-500"
+      >
+        dev.to
+      </a>
+      .
+    </p>
+
+    <ul class="pt-36 space-y-20">
+      {
+        blogs.map((b, i) => (
+          <li>
+            <BlogPreview index={i} blog={b} />
+          </li>
+        ))
+      }
+      <li class="text-sm pt-36 text-black/50 text-center">
+        No more blog posts
+      </li>
+    </ul>
   </main>
 </Layout>

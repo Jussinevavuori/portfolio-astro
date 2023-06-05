@@ -18,5 +18,12 @@ export default defineConfig({
 	adapter: vercel(),
 	experimental: {
 		hybridOutput: true
+	},
+	markdown: {
+		shikiConfig: {
+			theme: "dracula",
+			langs: ["js", "jsx", "ts", "tsx", "astro"],
+			wrap: false,
+		}
 	}
 });

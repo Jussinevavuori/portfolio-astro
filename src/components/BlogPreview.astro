@@ -1,0 +1,108 @@
+---
+import format from "date-fns/format";
+import differenceInDays from "date-fns/differenceInCalendarDays";
+import ColorBubble, { Props as ColorBubbleProps } from "./ColorBubble.astro";
+import {
+  ClockIcon,
+  MessageCircleIcon,
+  RadioIcon,
+  ThumbsUpIcon,
+} from "astro-feather";
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon";
+
+export interface Props {
+  blog: CollectionEntry<"blog">;
+  index?: number;
+}
+
+const { blog, index } = Astro.props;
+
+const variant: ColorBubbleProps["variant"] =
+  typeof index === "number"
+    ? (
+        {
+          0: "blue-sky",
+          1: "emerald-teal",
+          2: "indigo-violet",
+          3: "pink-fuchsia",
+        } as Record<number, ColorBubbleProps["variant"]>
+      )[Math.floor(index) % 4]
+    : "pink-fuchsia";
+---
+
+<div>
+  <div class="flex flex-col sm:flex-row items-start gap-16 sm:gap-8 relative">
+    <ColorBubble variant={variant} className="relative">
+      <span class="text-2xl">📖</span>
+    </ColorBubble>
+
+    {
+      differenceInDays(new Date(), new Date(blog.data.publishedTimestamp)) <
+        14 && (
+        <div class="absolute top-12 -left-1 py-1 px-2 rounded-full bg-yellow-400 flex items-center gap-2">
+          <span class="text-white">
+            <RadioIcon size={16} />
+          </span>
+          <span class="text-xs font-medium text-white">New</span>
+        </div>
+      )
+    }
+
+    <div class="flex flex-col items-start relative">
+      <p
+        class="absolute left-0 top-0 -translate-y-6 text-sm text-black/50 font-medium"
+      >
+        {format(new Date(new Date(blog.data.publishedTimestamp)), "dd.MM.yyyy")}
+      </p>
+
+      <a href={`/blog/${blog.slug}`}>
+        <h2
+          class="text-2xl font-medium text-black/90 hover:underline decoration-primary-500 underline-offset-2"
+        >
+          {blog.data.title}
+        </h2>
+      </a>
+
+      <div class="flex gap-4 flex-wrap items-center pt-2">
+        {
+          blog.data.tags.map((tag) => (
+            <span class="text-xs text-primary-600 font-medium">#{tag}</span>
+          ))
+        }
+      </div>
+
+      <div class="flex gap-4 flex-wrap items-center pt-3">
+        <div class="flex items-center gap-2">
+          <span class="text-black/70">
+            <ClockIcon size={20} />
+          </span>
+          <span class="text-sm font-medium text-black/70"
+            >{blog.data.readingTimeMinutes} min</span
+          >
+        </div>
+        <a href={blog.data.url} class="flex items-center gap-2 hover:underline">
+          <Icon
+            width={20}
+            height={20}
+            name="simple-icons:devdotto"
+            class="fill-black/80 hover:fill-primary-500"
+          />
+          <span class="text-sm font-medium text-black/70">Read on dev.to</span>
+        </a>
+        <a href={blog.data.url} class="flex items-center gap-2 hover:underline">
+          <MessageCircleIcon size={20} />
+          <span class="text-sm font-medium text-black/70"
+            >{blog.data.commentsCount} comments</span
+          >
+        </a>
+        <a href={blog.data.url} class="flex items-center gap-2 hover:underline">
+          <ThumbsUpIcon size={20} />
+          <span class="text-sm font-medium text-black/70"
+            >{blog.data.publicReactionsCount}</span
+          >
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

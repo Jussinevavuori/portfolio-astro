@@ -13,11 +13,17 @@ import ColorBubble from "src/components/ColorBubble.astro";
 import Recommendations from "src/components/Recommendations.astro";
 import { getCollection } from "astro:content";
 import ProjectOverview from "src/components/ProjectOverview.astro";
+import BlogPreview from "src/components/BlogPreview.astro";
 
 const allProjects = await getCollection("projects");
 const recommendedProjects = [...allProjects]
   .filter((project) => project.data.hasPage)
   .sort((a, b) => b.data.priority - a.data.priority)
+  .slice(0, 3);
+
+const blogs = await getCollection("blog");
+const latestBlogs = [...blogs]
+  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
   .slice(0, 3);
 ---
 
@@ -164,6 +170,33 @@ const recommendedProjects = [...allProjects]
       </h2>
 
       <Recommendations />
+    </section>
+
+    <!-- ------------------------------------------------------------------- -->
+    <!-- Recent blogs -->
+    <!-- ------------------------------------------------------------------- -->
+
+    <section id="latest-blogs" class="py-36">
+      <div
+        class="flex flex-col md:flex-row items-center gap-8 justify-center pt-12"
+      >
+        <ColorBubble variant="pink-fuchsia">
+          <span class="text-2xl">📖</span>
+        </ColorBubble>
+        <h2 class="relative text-4xl font-bold text-center">
+          Latest blog posts
+        </h2>
+      </div>
+
+      <ul class="pt-16 sm:pt-36 space-y-20">
+        {
+          latestBlogs.map((b, i) => (
+            <li>
+              <BlogPreview index={i} blog={b} />
+            </li>
+          ))
+        }
+      </ul>
     </section>
   </main>
 </Layout>
