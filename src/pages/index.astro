@@ -1,10 +1,12 @@
 ---
 import {
-  CodeIcon,
-  CloudIcon,
-  PenToolIcon,
-  MapIcon,
-  Edit3Icon,
+	CodeIcon,
+	CloudIcon,
+	PenToolIcon,
+	MapIcon,
+	Edit3Icon,
+	DatabaseIcon,
+	BoxIcon,
 } from "astro-feather";
 import GradientBackdrop from "src/components/GradientBackdrop.astro";
 import Layout from "../layouts/Layout.astro";
@@ -17,186 +19,215 @@ import BlogPreview from "src/components/BlogPreview.astro";
 
 const allProjects = await getCollection("projects");
 const recommendedProjects = [...allProjects]
-  .filter((project) => project.data.hasPage)
-  .sort((a, b) => b.data.priority - a.data.priority)
-  .slice(0, 3);
+	.filter((project) => project.data.hasPage)
+	.sort((a, b) => b.data.priority - a.data.priority)
+	.slice(0, 3);
 
 const blogs = await getCollection("blog");
 const latestBlogs = [...blogs]
-  .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
-  .slice(0, 3);
+	.sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+	.slice(0, 3);
 ---
 
 <Layout>
-  <main>
-    <!-- ------------------------------------------------------------------- -->
-    <!-- Hero -->
-    <!-- ------------------------------------------------------------------- -->
+	<main>
+		<!-- ------------------------------------------------------------------- -->
+		<!-- Hero -->
+		<!-- ------------------------------------------------------------------- -->
 
-    <GradientBackdrop
-      eagerLoading
-      gradient="gradient-3"
-      fadeBottom
-      className="top-0"
-    />
+		<GradientBackdrop
+			eagerLoading
+			gradient="gradient-3"
+			fadeBottom
+			className="top-0"
+		/>
 
-    <section class="pt-24">
-      <h1 class="relative text-3xl sm:text-6xl font-bold">
-        I'm <span class="text-primary-500">Jussi Nevavuori,</span>{" "}
-        fullstack web <span class="text-primary-500">developer</span>{" "}
-        and <span class="text-primary-500">designer.</span>
-      </h1>
+		<section class="pt-24">
+			<h1 class="relative text-3xl sm:text-6xl font-bold">
+				I'm <span class="text-primary-500">Jussi Nevavuori,</span>{" "}
+				fullstack web <span class="text-primary-500">developer</span>{" "}
+				and <span class="text-primary-500">designer.</span>
+			</h1>
 
-      <p class="pt-10 pb-16 text-sm sm:text-base text-black/70 leading-relaxed">
-        I design and create{" "}
-        <span class="text-primary-500 font-medium"
-          >functional and beautiful applications</span
-        >{" "}
-        with passion and a focus on{" "}
-        <span class="text-primary-500 font-medium">user experience</span>{" "}
-        and{" "}
-        <span class="text-primary-500 font-medium">high quality.</span>
-      </p>
+			<p class="pt-10 pb-16 text-sm sm:text-base text-black/70 leading-relaxed">
+				I design and create{" "}
+				<span class="text-primary-500 font-medium"
+					>functional and beautiful applications</span
+				>{" "}
+				with passion and a focus on{" "}
+				<span class="text-primary-500 font-medium">user experience</span>{" "}
+				and{" "}
+				<span class="text-primary-500 font-medium">high quality.</span>
+			</p>
 
-      <div class="flex items-center flex-wrap gap-y-4 gap-x-8">
-        <ButtonLink href="#contact" hasStartIcon>
-          <Edit3Icon />
-          Contact Me
-        </ButtonLink>
-        <ButtonLink href="/projects" variant="secondary">
-          View my Work
-        </ButtonLink>
-      </div>
-    </section>
+			<div class="flex items-center flex-wrap gap-y-4 gap-x-8">
+				<ButtonLink href="#contact" hasStartIcon>
+					<Edit3Icon />
+					Contact Me
+				</ButtonLink>
+				<ButtonLink href="/projects" variant="secondary">
+					View my Work
+				</ButtonLink>
+			</div>
+		</section>
 
-    <div class="h-48"></div>
+		<div class="h-48"></div>
 
-    <!-- ------------------------------------------------------------------- -->
-    <!-- Services -->
-    <!-- ------------------------------------------------------------------- -->
+		<!-- ------------------------------------------------------------------- -->
+		<!-- Services -->
+		<!-- ------------------------------------------------------------------- -->
 
-    <section id="services" class="py-36">
-      <h2 class="relative text-4xl font-bold text-center">
-        The full product development stack.
-      </h2>
+		<section id="services" class="py-36">
+			<h2 class="relative text-4xl font-bold text-center">
+				The full product development stack.
+			</h2>
 
-      <p class="text-black/70 text-center pt-8 text-sm">
-        From designing the interface to implementing your fully featured
-        application - I can provide the full product design process from an idea
-        to a finished hiqh quality app, polished with fantastic design and
-        running on state of the art software.
-      </p>
+			<p class="text-black/70 text-center pt-8 text-sm">
+				From designing the interface to implementing your fully featured
+				application - I can provide the full product design process from an idea
+				to a finished hiqh quality app, polished with fantastic design and
+				running on state of the art software.
+			</p>
 
-      <ul
-        class="flex flex-wrap items-center justify-center py-16 gap-x-8 gap-y-16"
-      >
-        <li class="max-w-xs flex flex-col items-center text-center">
-          <ColorBubble variant="indigo-violet">
-            <MapIcon stroke="white" />
-          </ColorBubble>
-          <p class="font-medium pb-3 pt-8">UX Design</p>
-          <p class="text-black/70 text-sm">
-            I create applications for real user to match their needs and
-            expectations, satisfy their needs and ease their lives.
-          </p>
-        </li>
+			<ul
+				class="flex flex-wrap items-center justify-center py-16 gap-x-8 gap-y-16"
+			>
+				<li class="mx-auto max-w-xs flex flex-col items-center text-center">
+					<ColorBubble variant="indigo-violet">
+						<MapIcon stroke="white" />
+					</ColorBubble>
+					<p class="font-medium pb-3 pt-8">UX Design</p>
+					<p class="text-black/70 text-sm">
+						I create applications for real user to match their needs and
+						expectations, satisfy their needs and ease their lives.
+					</p>
+				</li>
 
-        <li class="max-w-xs flex flex-col items-center text-center">
-          <ColorBubble variant="pink-fuchsia">
-            <PenToolIcon stroke="white" />
-          </ColorBubble>
-          <p class="font-medium pb-3 pt-8">UI Design</p>
-          <p class="text-black/70 text-sm">
-            I design beautiful user interfaces for applications to work on all
-            screen sizes. Your colors, typography and more, all pixel perfect
-            and beautiful.
-          </p>
-        </li>
+				<li class="mx-auto max-w-xs flex flex-col items-center text-center">
+					<ColorBubble variant="pink-fuchsia">
+						<PenToolIcon stroke="white" />
+					</ColorBubble>
+					<p class="font-medium pb-3 pt-8">UI Design</p>
+					<p class="text-black/70 text-sm">
+						I design beautiful user interfaces for applications to work on all
+						screen sizes. Your colors, typography and more, all pixel perfect
+						and beautiful.
+					</p>
+				</li>
 
-        <li class="max-w-xs flex flex-col items-center text-center">
-          <ColorBubble variant="blue-sky">
-            <CodeIcon stroke="white" />
-          </ColorBubble>
-          <p class="font-medium pb-3 pt-8">Frontend Development</p>
-          <p class="text-black/70 text-sm">
-            I create functional, beautiful and responsive frontend applications
-            for the web with modern technologies.
-          </p>
-        </li>
+				<li class="mx-auto max-w-xs flex flex-col items-center text-center">
+					<ColorBubble variant="blue-sky">
+						<CodeIcon stroke="white" />
+					</ColorBubble>
+					<p class="font-medium pb-3 pt-8">Frontend Development</p>
+					<p class="text-black/70 text-sm">
+						I create functional, beautiful and responsive frontend applications
+						for the web with modern technologies.
+					</p>
+				</li>
 
-        <li class="max-w-xs flex flex-col items-center text-center">
-          <ColorBubble variant="emerald-teal">
-            <CloudIcon stroke="white" />
-          </ColorBubble>
-          <p class="font-medium pb-3 pt-8">Backend Development</p>
-          <p class="text-black/70 text-sm">
-            I build high-quality cloud-based backend services for your
-            applications to scale and host all your users.
-          </p>
-        </li>
-      </ul>
-    </section>
+				<li class="mx-auto max-w-xs flex flex-col items-center text-center">
+					<ColorBubble variant="emerald-teal">
+						<CloudIcon stroke="white" />
+					</ColorBubble>
+					<p class="font-medium pb-3 pt-8">Backend Development</p>
+					<p class="text-black/70 text-sm">
+						I build high-quality cloud-based backend services for your
+						applications to scale and host all your users.
+					</p>
+				</li>
+			</ul>
 
-    <!-- ------------------------------------------------------------------- -->
-    <!-- Projects -->
-    <!-- ------------------------------------------------------------------- -->
+			<ul
+				class="grid justify-items-center grid-cols-1 sm:grid-cols-[1fr_1fr] gap-y-8 xs:gap-y-16 md:grid-cols-[1fr_1fr_1fr_1fr] pt-0 sm:pt-12 md:pt-16"
+			>
+				<li class="max-w-xs flex flex-col items-center text-center">
+					<ColorBubble variant="indigo-violet" className="!w-10 !h-10">
+						<DatabaseIcon stroke="white" />
+					</ColorBubble>
+					<p class="font-medium pt-4">Databases</p>
+				</li>
+				<li class="max-w-xs flex flex-col items-center text-center">
+					<ColorBubble variant="pink-fuchsia" className="!w-10 !h-10">
+						<CloudIcon stroke="white" />
+					</ColorBubble>
+					<p class="font-medium pt-4">Cloud infrastructure</p>
+				</li>
+				<li class="max-w-xs flex flex-col items-center text-center">
+					<ColorBubble variant="blue-sky" className="!w-10 !h-10">
+						<Edit3Icon stroke="white" />
+					</ColorBubble>
+					<p class="font-medium pt-4">Copywriting</p>
+				</li>
+				<li class="max-w-xs flex flex-col items-center text-center">
+					<ColorBubble variant="emerald-teal" className="!w-10 !h-10">
+						<BoxIcon stroke="white" />
+					</ColorBubble>
+					<p class="font-medium pt-4">Service design</p>
+				</li>
+			</ul>
+		</section>
 
-    <GradientBackdrop gradient="gradient-4" fadeBottom fadeTop />
+		<!-- ------------------------------------------------------------------- -->
+		<!-- Projects -->
+		<!-- ------------------------------------------------------------------- -->
 
-    <section id="recommended-projects" class="py-36">
-      <h2 class="relative text-4xl font-bold text-center">Recent projects.</h2>
+		<GradientBackdrop gradient="gradient-4" fadeBottom fadeTop />
 
-      <p class="text-black/70 text-sm text-center pt-8">
-        View projects I have done in the past which best represent my talent.
-      </p>
+		<section id="recommended-projects" class="py-36">
+			<h2 class="relative text-4xl font-bold text-center">Recent projects.</h2>
 
-      <div class="flex flex-col gap-24 pt-16">
-        {
-          recommendedProjects.map((project) => (
-            <ProjectOverview project={project} />
-          ))
-        }
-        <ButtonLink href="/projects" fullWidth>View all projects</ButtonLink>
-      </div>
-    </section>
+			<p class="text-black/70 text-sm text-center pt-8">
+				View projects I have done in the past which best represent my talent.
+			</p>
 
-    <!-- ------------------------------------------------------------------- -->
-    <!-- Recommendations -->
-    <!-- ------------------------------------------------------------------- -->
+			<div class="flex flex-col gap-24 pt-16">
+				{
+					recommendedProjects.map((project) => (
+						<ProjectOverview project={project} />
+					))
+				}
+				<ButtonLink href="/projects" fullWidth>View all projects</ButtonLink>
+			</div>
+		</section>
 
-    <section id="recommendations" class="py-36">
-      <h2 class="relative text-4xl font-bold text-center">
-        What people are saying.
-      </h2>
+		<!-- ------------------------------------------------------------------- -->
+		<!-- Recommendations -->
+		<!-- ------------------------------------------------------------------- -->
 
-      <Recommendations />
-    </section>
+		<section id="recommendations" class="py-36">
+			<h2 class="relative text-4xl font-bold text-center">
+				What people are saying.
+			</h2>
 
-    <!-- ------------------------------------------------------------------- -->
-    <!-- Recent blogs -->
-    <!-- ------------------------------------------------------------------- -->
+			<Recommendations />
+		</section>
 
-    <section id="latest-blogs" class="py-36">
-      <div
-        class="flex flex-col md:flex-row items-center gap-8 justify-center pt-12"
-      >
-        <ColorBubble variant="pink-fuchsia">
-          <span class="text-2xl">📖</span>
-        </ColorBubble>
-        <h2 class="relative text-4xl font-bold text-center">
-          Latest blog posts
-        </h2>
-      </div>
+		<!-- ------------------------------------------------------------------- -->
+		<!-- Recent blogs -->
+		<!-- ------------------------------------------------------------------- -->
 
-      <ul class="pt-16 sm:pt-36 space-y-20">
-        {
-          latestBlogs.map((b, i) => (
-            <li>
-              <BlogPreview index={i} blog={b} />
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-  </main>
+		<section id="latest-blogs" class="py-36">
+			<div
+				class="flex flex-col md:flex-row items-center gap-8 justify-center pt-12"
+			>
+				<ColorBubble variant="pink-fuchsia">
+					<span class="text-2xl">📖</span>
+				</ColorBubble>
+				<h2 class="relative text-4xl font-bold text-center">
+					Latest blog posts
+				</h2>
+			</div>
+
+			<ul class="pt-16 sm:pt-36 space-y-20">
+				{
+					latestBlogs.map((b, i) => (
+						<li>
+							<BlogPreview index={i} blog={b} />
+						</li>
+					))
+				}
+			</ul>
+		</section>
+	</main>
 </Layout>

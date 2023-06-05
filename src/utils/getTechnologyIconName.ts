@@ -26,6 +26,12 @@ export function getTechnologyIconName(technology: string) {
       return "devicon:google";
     case "socket.io":
       return "logos:socket-io";
+    case "next auth":
+      return "simple-icons:auth0";
+    case "sendgrid":
+      return "logos:sendgrid-icon";
+    case "twilio":
+      return "logos:twilio-icon";
     default:
       return `devicon:${technology
         .toLowerCase()
