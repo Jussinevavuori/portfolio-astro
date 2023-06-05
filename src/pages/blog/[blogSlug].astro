@@ -7,8 +7,8 @@ import {
   MessageCircleIcon,
   ThumbsUpIcon,
 } from "astro-feather";
-import format from "date-fns/format";
-import isSameDay from "date-fns/isSameDay";
+import format from "date-fns/format/index.js";
+import isSameDay from "date-fns/isSameDay/index.js";
 import { Icon } from "astro-icon";
 import GradientBackdrop from "src/components/GradientBackdrop.astro";
 import { exportAllBlogsToContentMarkdown } from "src/utils/dev-to-blogs";
