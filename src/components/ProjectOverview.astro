@@ -28,6 +28,7 @@ const { Content } = await project.render();
 			<a
 				href={`/projects/${project.slug}`}
 				class="relative overflow-hidden block w-full rounded-2xl border h-[200px] sm:h-[400px]"
+				aria-label={`View ${project.data.title}`}
 			>
 				<div class="relative w-full h-full">
 					<span class="sr-only">View {project.data.title}</span>
