@@ -30,7 +30,7 @@ const { Content } = await project.render();
 				class="relative overflow-hidden block w-full rounded-2xl border h-[200px] sm:h-[400px]"
 			>
 				<div class="relative w-full h-full">
-					<span class="visually-hidden">View {project.data.title}</span>
+					<span class="sr-only">View {project.data.title}</span>
 					<Image
 						class="w-full h-full object-cover rounded-2xl opacity-100"
 						src={project.data.image}

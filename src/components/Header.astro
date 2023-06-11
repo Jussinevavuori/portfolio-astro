@@ -12,146 +12,147 @@ const currentPathname = new URL(Astro.request.url).pathname;
 ---
 
 <Menu client:only="svelte">
-  <!-- ----------------------------------------------------------------------- -->
-  <!-- Mobile menu content -->
-  <!-- ----------------------------------------------------------------------- -->
-  <div
-    class="relative h-full w-full flex flex-col items-center justify-between"
-  >
-    <div class="pt-8 pb-48 flex gap-8 sm:gap-12">
-      <a href="mailto:jussi@nevavuori.fi">
-        <Icon
-          width={20}
-          height={20}
-          name="simple-icons:gmail"
-          class="fill-slate-800 hover:fill-primary-500"
-        />
-        <span class="hidden">Mail</span>
-      </a>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/Jussinevavuori"
-      >
-        <Icon
-          width={20}
-          height={20}
-          name="simple-icons:github"
-          class="fill-slate-800 hover:fill-primary-500"
-        />
-        <span class="hidden">GitHub</span>
-      </a>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.linkedin.com/in/jussinevavuori/"
-      >
-        <Icon
-          width={20}
-          height={20}
-          name="simple-icons:linkedin"
-          class="fill-slate-800 hover:fill-primary-500"
-        />
-        <span class="hidden">LinkedIn</span>
-      </a>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://twitter.com/jussinevavuori"
-      >
-        <Icon
-          width={20}
-          height={20}
-          name="simple-icons:twitter"
-          class="fill-slate-800 hover:fill-primary-500"
-        />
-        <span class="hidden">Twitter</span>
-      </a>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://dev.to/jussinevavuori"
-      >
-        <Icon
-          width={20}
-          height={20}
-          name="simple-icons:devdotto"
-          class="fill-slate-800 hover:fill-primary-500"
-        />
-        <span class="hidden">Dev.to</span>
-      </a>
-    </div>
+	<!-- ----------------------------------------------------------------------- -->
+	<!-- Mobile menu content -->
+	<!-- ----------------------------------------------------------------------- -->
+	<div
+		class="relative h-full w-full flex flex-col items-center justify-between"
+	>
+		<div class="pt-8 pb-48 flex gap-8 sm:gap-12">
+			<a href="mailto:jussi@nevavuori.fi">
+				<Icon
+					width={20}
+					height={20}
+					name="simple-icons:gmail"
+					class="fill-slate-800 hover:fill-primary-500"
+				/>
+				<span class="sr-only">Mail</span>
+			</a>
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://github.com/Jussinevavuori"
+			>
+				<Icon
+					width={20}
+					height={20}
+					name="simple-icons:github"
+					class="fill-slate-800 hover:fill-primary-500"
+				/>
+				<span class="sr-only">GitHub</span>
+			</a>
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://www.linkedin.com/in/jussinevavuori/"
+			>
+				<Icon
+					width={20}
+					height={20}
+					name="simple-icons:linkedin"
+					class="fill-slate-800 hover:fill-primary-500"
+				/>
+				<span class="sr-only">LinkedIn</span>
+			</a>
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://twitter.com/jussinevavuori"
+			>
+				<Icon
+					width={20}
+					height={20}
+					name="simple-icons:twitter"
+					class="fill-slate-800 hover:fill-primary-500"
+				/>
+				<span class="sr-only">Twitter</span>
+			</a>
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://dev.to/jussinevavuori"
+			>
+				<Icon
+					width={20}
+					height={20}
+					name="simple-icons:devdotto"
+					class="fill-slate-800 hover:fill-primary-500"
+				/>
+				<span class="sr-only">Dev.to</span>
+			</a>
+		</div>
 
-    <div class="w-full flex flex-col items-end gap-8 pb-12 pr-6 sm:pr-12">
-      <a href="/">
-        <div class="flex items-center flex-row-reverse gap-8 w-48">
-          <ColorBubble variant="pink-fuchsia">
-            <span class="text-2xl"> 🏠</span>
-          </ColorBubble>
-          <span
-            class:list={[
-              "font-medium",
-              currentPathname === "/" ? "text-primary-500" : "",
-            ]}
-          >
-            Home
-          </span>
-        </div>
-      </a>
-      <a href="/about">
-        <div class="flex items-center flex-row-reverse gap-8 w-48">
-          <ColorBubble variant="indigo-violet">
-            <span class="text-2xl"> 📕</span>
-          </ColorBubble>
-          <span
-            class:list={[
-              "font-medium",
-              currentPathname === "/about" ? "text-primary-500" : "",
-            ]}
-          >
-            About Me
-          </span>
-        </div>
-      </a>
-      <a href="/projects">
-        <div class="flex items-center flex-row-reverse gap-8 w-48">
-          <ColorBubble variant="blue-sky">
-            <span class="text-2xl"> 📁</span>
-          </ColorBubble>
-          <span
-            class:list={[
-              "font-medium",
-              currentPathname === "/projects" ? "text-primary-500" : "",
-            ]}
-          >
-            My Work
-          </span>
-        </div>
-      </a>
-      <a href="/blog">
-        <div class="flex items-center flex-row-reverse gap-8 w-48">
-          <ColorBubble variant="emerald-teal">
-            <span class="text-2xl"> 📖</span>
-          </ColorBubble>
-          <span
-            class:list={[
-              "font-medium",
-              currentPathname === "/blog" ? "text-primary-500" : "",
-            ]}
-          >
-            Blog
-          </span>
-        </div>
-      </a>
-    </div>
+		<div class="w-full flex flex-col items-end gap-8 pb-12 pr-6 sm:pr-12">
+			<a href="/">
+				<div class="flex items-center flex-row-reverse gap-8 w-48">
+					<ColorBubble variant="pink-fuchsia">
+						<span class="text-2xl"> 🏠</span>
+					</ColorBubble>
+					<span
+						class:list={[
+							"font-medium",
+							currentPathname === "/" ? "text-primary-500" : "",
+						]}
+					>
+						Home
+					</span>
+				</div>
+			</a>
+			<a href="/about">
+				<div class="flex items-center flex-row-reverse gap-8 w-48">
+					<ColorBubble variant="indigo-violet">
+						<span class="text-2xl"> 📕</span>
+					</ColorBubble>
+					<span
+						class:list={[
+							"font-medium",
+							currentPathname === "/about" ? "text-primary-500" : "",
+						]}
+					>
+						About Me
+					</span>
+				</div>
+			</a>
+			<a href="/projects">
+				<div class="flex items-center flex-row-reverse gap-8 w-48">
+					<ColorBubble variant="blue-sky">
+						<span class="text-2xl"> 📁</span>
+					</ColorBubble>
+					<span
+						class:list={[
+							"font-medium",
+							currentPathname === "/projects" ? "text-primary-500" : "",
+						]}
+					>
+						My Work
+					</span>
+				</div>
+			</a>
+			<a href="/blog">
+				<div class="flex items-center flex-row-reverse gap-8 w-48">
+					<ColorBubble variant="emerald-teal">
+						<span class="text-2xl"> 📖</span>
+					</ColorBubble>
+					<span
+						class:list={[
+							"font-medium",
+							currentPathname === "/blog" ? "text-primary-500" : "",
+						]}
+					>
+						Blog
+					</span>
+				</div>
+			</a>
+		</div>
 
-    <button
-      aria-label="Close menu"
-      class="absolute left-6 sm:left-1/2 sm:-translate-x-1/2 bottom-12 bg-black/5 hover:bg-black/10 w-14 h-14 flex items-center justify-center rounded-full outline-dashed outline-offset-2 outline-black/50 outline-1"
-    >
-      <XIcon />
-    </button>
-  </div>
+		<button
+			aria-label="Close menu"
+			class="absolute left-6 sm:left-1/2 sm:-translate-x-1/2 bottom-12 bg-black/5 hover:bg-black/10 w-14 h-14 flex items-center justify-center rounded-full outline-dashed outline-offset-2 outline-black/50 outline-1"
+		>
+			<span class="sr-only">Close menu</span>
+			<XIcon />
+		</button>
+	</div>
 </Menu>
 
 <!-- ----------------------------------------------------------------------- -->
@@ -159,131 +160,132 @@ const currentPathname = new URL(Astro.request.url).pathname;
 <!-- ----------------------------------------------------------------------- -->
 
 <header
-  class="z-30 sticky top-0 left-0 right-0 px-6 transition-all md:px-12 py-4 flex items-center justify-between backdrop-blur-xl"
+	class="z-30 sticky top-0 left-0 right-0 px-6 transition-all md:px-12 py-4 flex items-center justify-between backdrop-blur-xl"
 >
-  {/* Reduce blur strength */}
-  <div
-    class="absolute inset-0 bg-white/80 border-b border-b-black/5"
-    style={{ zIndex: -1 }}
-  >
-  </div>
+	{/* Reduce blur strength */}
+	<div
+		class="absolute inset-0 bg-white/80 border-b border-b-black/5"
+		style={{ zIndex: -1 }}
+	>
+	</div>
 
-  <a rel="prefetch" href="/">
-    <div class="flex items-center gap-4">
-      <Image width={24} height={24} alt="Jussi Nevavuori Logo" src={logo} />
-      <span class="font-semibold text-xl hidden lg:block">Jussi Nevavuori</span>
-      <span class="font-semibold text-xl lg:hidden">JN</span>
-    </div>
-  </a>
+	<a rel="prefetch" href="/">
+		<div class="flex items-center gap-4">
+			<Image width={24} height={24} alt="Jussi Nevavuori Logo" src={logo} />
+			<span class="font-semibold text-xl hidden lg:block">Jussi Nevavuori</span>
+			<span class="font-semibold text-xl lg:hidden">JN</span>
+		</div>
+	</a>
 
-  <div class="block lg:hidden">
-    <MenuButton client:load />
-  </div>
+	<div class="block lg:hidden">
+		<MenuButton client:load />
+		<span class="sr-only">Open menu</span>
+	</div>
 
-  <nav
-    class="hidden lg:flex items-center text-sm font-medium divide-x divide-black/10"
-  >
-    <div class="flex items-center gap-8 pr-6">
-      <a rel="prefetch" href="/">
-        <span
-          data-active={currentPathname === "/"}
-          class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
-        >
-          Home
-        </span>
-      </a>
-      <a rel="prefetch" href="/about">
-        <span
-          data-active={currentPathname.startsWith("/about")}
-          class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
-        >
-          About Me
-        </span>
-      </a>
-      <a rel="prefetch" href="/projects">
-        <span
-          data-active={currentPathname.startsWith("/projects")}
-          class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
-        >
-          My Work
-        </span>
-      </a>
-      <a rel="prefetch" href="/blog">
-        <span
-          data-active={currentPathname.startsWith("/blog")}
-          class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
-        >
-          Blog
-        </span>
-      </a>
-    </div>
+	<nav
+		class="hidden lg:flex items-center text-sm font-medium divide-x divide-black/10"
+	>
+		<div class="flex items-center gap-8 pr-6">
+			<a rel="prefetch" href="/">
+				<span
+					data-active={currentPathname === "/"}
+					class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
+				>
+					Home
+				</span>
+			</a>
+			<a rel="prefetch" href="/about">
+				<span
+					data-active={currentPathname.startsWith("/about")}
+					class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
+				>
+					About Me
+				</span>
+			</a>
+			<a rel="prefetch" href="/projects">
+				<span
+					data-active={currentPathname.startsWith("/projects")}
+					class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
+				>
+					My Work
+				</span>
+			</a>
+			<a rel="prefetch" href="/blog">
+				<span
+					data-active={currentPathname.startsWith("/blog")}
+					class="data-[active]:underline decoration-2 decoration-primary-500 underline-offset-2 data-[active]:text-primary-500 hover:text-primary-500"
+				>
+					Blog
+				</span>
+			</a>
+		</div>
 
-    <div class="relative flex items-center gap-6 pl-6">
-      <a
-        data-hover-text="Mail;jussi@nevavuori.fi"
-        href="mailto:jussi@nevavuori.fi"
-      >
-        <Icon
-          width={20}
-          height={20}
-          name="simple-icons:gmail"
-          class="fill-slate-800 hover:fill-primary-500"
-        />
-      </a>
-      <a
-        data-hover-text="GitHub;Jussinevavuori"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/Jussinevavuori"
-      >
-        <Icon
-          width={20}
-          height={20}
-          name="simple-icons:github"
-          class="fill-slate-800 hover:fill-primary-500"
-        />
-      </a>
-      <a
-        data-hover-text="LinkedIn;Jussi Nevavuori"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.linkedin.com/in/jussinevavuori/"
-      >
-        <Icon
-          width={20}
-          height={20}
-          name="simple-icons:linkedin"
-          class="fill-slate-800 hover:fill-primary-500"
-        />
-      </a>
-      <a
-        data-hover-text="Twitter;@jussinevavuori"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://twitter.com/jussinevavuori"
-      >
-        <Icon
-          width={20}
-          height={20}
-          name="simple-icons:twitter"
-          class="fill-slate-800 hover:fill-primary-500"
-        />
-      </a>
-      <a
-        data-hover-text="Dev.to;Jussinevavuori"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://dev.to/jussinevavuori"
-      >
-        <Icon
-          width={20}
-          height={20}
-          name="simple-icons:devdotto"
-          class="fill-slate-800 hover:fill-primary-500"
-        />
-      </a>
+		<div class="relative flex items-center gap-6 pl-6">
+			<a
+				data-hover-text="Mail;jussi@nevavuori.fi"
+				href="mailto:jussi@nevavuori.fi"
+			>
+				<Icon
+					width={20}
+					height={20}
+					name="simple-icons:gmail"
+					class="fill-slate-800 hover:fill-primary-500"
+				/>
+			</a>
+			<a
+				data-hover-text="GitHub;Jussinevavuori"
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://github.com/Jussinevavuori"
+			>
+				<Icon
+					width={20}
+					height={20}
+					name="simple-icons:github"
+					class="fill-slate-800 hover:fill-primary-500"
+				/>
+			</a>
+			<a
+				data-hover-text="LinkedIn;Jussi Nevavuori"
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://www.linkedin.com/in/jussinevavuori/"
+			>
+				<Icon
+					width={20}
+					height={20}
+					name="simple-icons:linkedin"
+					class="fill-slate-800 hover:fill-primary-500"
+				/>
+			</a>
+			<a
+				data-hover-text="Twitter;@jussinevavuori"
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://twitter.com/jussinevavuori"
+			>
+				<Icon
+					width={20}
+					height={20}
+					name="simple-icons:twitter"
+					class="fill-slate-800 hover:fill-primary-500"
+				/>
+			</a>
+			<a
+				data-hover-text="Dev.to;Jussinevavuori"
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://dev.to/jussinevavuori"
+			>
+				<Icon
+					width={20}
+					height={20}
+					name="simple-icons:devdotto"
+					class="fill-slate-800 hover:fill-primary-500"
+				/>
+			</a>
 
-      <HeaderHoverText client:only="svelte" />
-    </div>
-  </nav>
+			<HeaderHoverText client:only="svelte" />
+		</div>
+	</nav>
 </header>
