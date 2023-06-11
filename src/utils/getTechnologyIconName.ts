@@ -32,6 +32,10 @@ export function getTechnologyIconName(technology: string) {
       return "logos:sendgrid-icon";
     case "twilio":
       return "logos:twilio-icon";
+    case "vue":
+      return "logos:vue";
+    case "nuxt":
+      return "logos:nuxt-icon";
     default:
       return `devicon:${technology
         .toLowerCase()

@@ -54,8 +54,17 @@ export const blogCollection = defineCollection({
   }),
 });
 
+export const technologiesCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    technologies: z.string().array(),
+  }),
+});
+
 export const collections = {
   recommendations: recommendationsCollection,
+  technologies: technologiesCollection,
   projects: projectsCollection,
   blog: blogCollection,
 };
