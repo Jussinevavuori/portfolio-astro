@@ -36,7 +36,15 @@ export function getTechnologyIconName(technology: string) {
       return "logos:vue";
     case "nuxt":
       return "logos:nuxt-icon";
+    case "aws":
+      return "logos:aws";
+
     default:
+      // Adobe case
+      if (technology.toLowerCase().startsWith("adobe ")) {
+        return `logos:${technology.toLowerCase().replace(/\s/g, "-")}`;
+      }
+
       return `devicon:${technology
         .toLowerCase()
         .replace(/\./g, "dot")
