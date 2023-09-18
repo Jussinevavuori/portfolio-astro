@@ -4,7 +4,7 @@ title: "End-to-end Typesafe APIs with TypeScript and shared Zod schemas"
 description: "Validating your data is absolutely necessary. The data could be data fetched from an API, data posted..."
 path: "/jussinevavuori/end-to-end-typesafe-apis-with-typescript-and-shared-zod-schemas-4jmo"
 url: "https://dev.to/jussinevavuori/end-to-end-typesafe-apis-with-typescript-and-shared-zod-schemas-4jmo"
-commentsCount: 0
+commentsCount: 1
 publicReactionsCount: 10
 publishedTimestamp: 2022-07-18T08:07:57Z
 positiveReactionsCount: 10
@@ -15,7 +15,7 @@ createdAt: 2022-07-08T14:13:53Z
 editedAt: null
 crosspostedAt: null
 publishedAt: 2022-07-18T08:07:57Z
-lastCommentAt: 2022-07-18T08:07:57Z
+lastCommentAt: 2023-08-06T18:32:48Z
 readingTimeMinutes: 7
 tags: ["typescript", "javascript", "webdev"]
 ---

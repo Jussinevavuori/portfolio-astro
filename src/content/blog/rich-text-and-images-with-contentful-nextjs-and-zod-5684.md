@@ -5,9 +5,9 @@ description: "The previous article demonstrated how we can create models in our 
 path: "/jussinevavuori/rich-text-and-images-with-contentful-nextjs-and-zod-5684"
 url: "https://dev.to/jussinevavuori/rich-text-and-images-with-contentful-nextjs-and-zod-5684"
 commentsCount: 1
-publicReactionsCount: 0
+publicReactionsCount: 1
 publishedTimestamp: 2022-08-18T09:09:00Z
-positiveReactionsCount: 0
+positiveReactionsCount: 1
 coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--tfHD2qTr--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y1xkldadvbc76ey1k8e7.png"
 socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--sn5yylVX--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y1xkldadvbc76ey1k8e7.png"
 canonicalUrl: "https://dev.to/jussinevavuori/rich-text-and-images-with-contentful-nextjs-and-zod-5684"
