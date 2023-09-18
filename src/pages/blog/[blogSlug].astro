@@ -1,11 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import {
-	ClockIcon,
-	Edit3Icon,
-	EditIcon,
-	MessageCircleIcon,
-	ThumbsUpIcon,
+  ClockIcon,
+  Edit3Icon,
+  EditIcon,
+  MessageCircleIcon,
+  ThumbsUpIcon,
 } from "astro-feather";
 import format from "date-fns/format/index.js";
 import isSameDay from "date-fns/isSameDay/index.js";
@@ -15,16 +15,16 @@ import { exportAllBlogsToContentMarkdown } from "src/utils/dev-to-blogs";
 import { CollectionEntry, getCollection } from "astro:content";
 
 export interface Props {
-	blog: CollectionEntry<"blog">;
+  blog: CollectionEntry<"blog">;
 }
 
 export async function getStaticPaths() {
-	await exportAllBlogsToContentMarkdown();
-	const allBlogs = await getCollection("blog");
-	return allBlogs.map((blog) => ({
-		params: { blogSlug: blog.slug },
-		props: { blog },
-	}));
+  await exportAllBlogsToContentMarkdown();
+  const allBlogs = await getCollection("blog");
+  return allBlogs.map((blog) => ({
+    params: { blogSlug: blog.slug },
+    props: { blog },
+  }));
 }
 
 const { blog } = Astro.props;
@@ -32,133 +32,147 @@ const { Content } = await blog.render();
 ---
 
 <Layout subtitle={blog.data.title}>
-	<Fragment slot="head-og">
-		<meta property="og:image" content={blog.data.socialImage} />
-		<meta property="twitter:image" content={blog.data.socialImage} />
-		<meta property="og:type" content="article" />
-		<meta property="og:locale" content="en-FI" />
-		<meta property="og:site_name" content="Jussi Nevavuori" />
-		<meta property="og:image:width" content="1000" />
-		<meta property="og:description" content={blog.data.description} />
-		<meta
-			property="article:published_time"
-			content={blog.data.publishedAt.toISOString()}
-		/>
-		<meta
-			property="article:modified_time"
-			content={blog.data.editedAt?.toISOString() ?? null}
-		/>
-		<meta property="article:author:first_name" content="Jussi" />
-		<meta property="article:author:last_name" content="Nevavuori" />
-		<meta property="article:author:username" content="@jussinevavuori" />
-		<meta property="article:author:gender" content="male" />
-		<meta property="og:image:height" content="500" />
-		<meta property="og:image:alt" content={blog.data.title} />
-		<meta property="og:url" content="https://jussinevavuori.com" />
-		<meta property="twitter:domain" content="jussinevavuori.com" />
-		<meta property="twitter:card" content="summary_large-image" />
-		<meta property="twitter:url" content="https://jussinevavuori.com" />
-		<meta property="twitter:description" content={blog.data.description} />
-	</Fragment>
+  <Fragment slot="head-og">
+    <meta property="og:image" content={blog.data.socialImage} />
+    <meta property="twitter:image" content={blog.data.socialImage} />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en-FI" />
+    <meta property="og:site_name" content="Jussi Nevavuori" />
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:description" content={blog.data.description} />
+    <meta
+      property="article:published_time"
+      content={blog.data.publishedAt.toISOString()}
+    />
+    <meta
+      property="article:modified_time"
+      content={blog.data.editedAt?.toISOString() ?? null}
+    />
+    <meta property="article:author:first_name" content="Jussi" />
+    <meta property="article:author:last_name" content="Nevavuori" />
+    <meta property="article:author:username" content="@jussinevavuori" />
+    <meta property="article:author:gender" content="male" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:image:alt" content={blog.data.title} />
+    <meta property="og:url" content="https://jussinevavuori.com" />
+    <meta property="twitter:domain" content="jussinevavuori.com" />
+    <meta property="twitter:card" content="summary_large-image" />
+    <meta property="twitter:url" content="https://jussinevavuori.com" />
+    <meta property="twitter:description" content={blog.data.description} />
+  </Fragment>
 
-	<main class="pt-16">
-		<GradientBackdrop gradient="gradient-3" fadeBottom className="top-0" />
+  <main class="pt-16 mx-auto max-w-prose">
+    <GradientBackdrop gradient="gradient-3" fadeBottom className="top-0" />
 
-		<div class="flex flex-col items-start relative">
-			<h1 class="text-2xl sm:text-4xl font-bold text-black/90">
-				{blog.data.title}
-			</h1>
+    <div class="flex flex-col items-start relative">
+      <h1 class="text-2xl sm:text-4xl font-bold text-black/90">
+        {blog.data.title}
+      </h1>
 
-			<p class="flex flex-wrap gap-4 pt-12">
-				<span class="flex items-center gap-2">
-					<EditIcon size={20} />
-					<span class="text-sm font-medium text-black/70">
-						Published {" "}
-						{
-							format(
-								new Date(new Date(blog.data.publishedTimestamp)),
-								"dd.MM.yyyy"
-							)
-						}
-					</span>
-				</span>
+      <p class="flex flex-wrap gap-4 pt-12">
+        <span class="flex items-center gap-2">
+          <EditIcon size={20} />
+          <span class="text-sm font-medium text-black/70">
+            Published {" "}
+            {
+              format(
+                new Date(new Date(blog.data.publishedTimestamp)),
+                "dd.MM.yyyy"
+              )
+            }
+          </span>
+        </span>
 
-				{
-					blog.data.editedAt &&
-						!isSameDay(
-							new Date(blog.data.publishedAt),
-							new Date(blog.data.editedAt)
-						) && (
-							<span class="flex items-center gap-2">
-								<Edit3Icon size={20} />
-								<span class="text-sm font-medium text-black/70">
-									Last edited{" "}
-									{format(new Date(new Date(blog.data.editedAt)), "dd.MM.yyyy")}
-								</span>
-							</span>
-						)
-				}
-			</p>
+        {
+          blog.data.editedAt &&
+            !isSameDay(
+              new Date(blog.data.publishedAt),
+              new Date(blog.data.editedAt)
+            ) && (
+              <span class="flex items-center gap-2">
+                <Edit3Icon size={20} />
+                <span class="text-sm font-medium text-black/70">
+                  Last edited{" "}
+                  {format(new Date(new Date(blog.data.editedAt)), "dd.MM.yyyy")}
+                </span>
+              </span>
+            )
+        }
+      </p>
 
-			<div class="flex gap-4 flex-wrap items-center pt-3">
-				<div class="flex items-center gap-2">
-					<span class="text-black/70">
-						<ClockIcon size={20} />
-					</span>
-					<span class="text-sm font-medium text-black/70"
-						>{blog.data.readingTimeMinutes} min</span
-					>
-				</div>
-				<a href={blog.data.url} class="flex items-center gap-2 hover:underline">
-					<Icon
-						width={20}
-						height={20}
-						name="simple-icons:devdotto"
-						class="fill-black/80 hover:fill-primary-500"
-					/>
-					<span class="text-sm font-medium text-black/70">Read on dev.to</span>
-				</a>
-				<a href={blog.data.url} class="flex items-center gap-2 hover:underline">
-					<MessageCircleIcon size={20} />
-					<span class="text-sm font-medium text-black/70"
-						>{blog.data.commentsCount} comments</span
-					>
-				</a>
-				<a href={blog.data.url} class="flex items-center gap-2 hover:underline">
-					<ThumbsUpIcon size={20} />
-					<span class="text-sm font-medium text-black/70"
-						>{blog.data.publicReactionsCount}</span
-					>
-				</a>
-			</div>
+      <div class="flex gap-4 flex-wrap items-center pt-3">
+        <div class="flex items-center gap-2">
+          <span class="text-black/70">
+            <ClockIcon size={20} />
+          </span>
+          <span class="text-sm font-medium text-black/70"
+            >{blog.data.readingTimeMinutes} min</span
+          >
+        </div>
+        <a href={blog.data.url} class="flex items-center gap-2 hover:underline">
+          <Icon
+            width={20}
+            height={20}
+            name="simple-icons:devdotto"
+            class="fill-black/80 hover:fill-primary-500"
+          />
+          <span class="text-sm font-medium text-black/70">Read on dev.to</span>
+        </a>
+        <a href={blog.data.url} class="flex items-center gap-2 hover:underline">
+          <MessageCircleIcon size={20} />
+          <span class="text-sm font-medium text-black/70"
+            >{blog.data.commentsCount} comments</span
+          >
+        </a>
+        <a href={blog.data.url} class="flex items-center gap-2 hover:underline">
+          <ThumbsUpIcon size={20} />
+          <span class="text-sm font-medium text-black/70"
+            >{blog.data.publicReactionsCount}</span
+          >
+        </a>
+      </div>
 
-			<div class="flex gap-4 flex-wrap items-center pt-3">
-				{
-					blog.data.tags.map((tag) => (
-						<span class="text-xs text-primary-600 font-medium">#{tag}</span>
-					))
-				}
-			</div>
+      <div class="flex gap-4 flex-wrap items-center pt-3">
+        {
+          blog.data.tags.map((tag) => (
+            <span class="text-xs text-primary-600 font-medium">#{tag}</span>
+          ))
+        }
+      </div>
 
-			<div class="pt-16 text-black/70 text-sm">
-				<article
-					class:list={[
-						"relative prose prose-slate max-w-max overflow-x-hidden",
-						"prose-p:text-black/70",
-						"prose-table:table-auto prose-table:border-collapse prose-table:rounded-sm",
-						"prose-table:bg-white prose-table:relative prose-table:after:absolute prose-table:after:inset-0 prose-table:after:border prose-table:after:rounded-sm",
-						"prose-td:border-b prose-td:border-slate-100 prose-td:px-4 prose-td:text-black/50",
-						"prose-th:border-b prose-th:border-b-slate-200 prose-th:px-4",
-						"prose-table:max-w-full prose-table:overflow-x-scroll",
-						"prose-code:before:hidden prose-code:after:hidden",
-						"table-remove-outer-borders",
-						"[&_pre]:overflow-x-auto prose-pre:bg-black/70 prose-pre:p-4",
-						"prose-custom",
-					]}
-				>
-					<Content />
-				</article>
-			</div>
-		</div>
-	</main>
+      <div class="pt-16 text-black/70 text-sm">
+        <article
+          class:list={[
+            // Base styles
+            "relative prose prose-slate overflow-x-hidden",
+
+            // Code styles
+
+            "[&_:not(pre)_code]:bg-slate-100",
+            "[&_:not(pre)_code]:py-0.5",
+            "[&_:not(pre)_code]:px-1",
+            "[&_:not(pre)_code]:rounded",
+            "[&_:not(pre)_code]:before:hidden",
+            "[&_:not(pre)_code]:after:hidden",
+
+            // Blockquote styles
+
+            "prose-blockquote:font-normal",
+            "prose-blockquote:text-black/60",
+            "[&_blockquote_p:before]:hidden",
+
+            // H5 support
+
+            "prose-h5:font-bold",
+
+            // Heading margins
+
+            "prose-headings:mt-16 [&_h2+h3]:!mt-8 prose-h4:text-lg",
+          ]}
+        >
+          <Content />
+        </article>
+      </div>
+    </div>
+  </main>
 </Layout>
