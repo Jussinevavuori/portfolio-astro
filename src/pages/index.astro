@@ -196,15 +196,19 @@ const latestBlogs = [...blogs]
     <!-- Technologies -->
     <!-- ------------------------------------------------------------------- -->
 
-    <section id="technologies" class="py-36">
-      <h2 class="relative text-4xl font-bold text-center">
-        My core technologies.
-      </h2>
+    {
+      process.env.NODE_ENV === "development" && (
+        <section id="technologies" class="py-36">
+          <h2 class="relative text-4xl font-bold text-center">
+            My core technologies.
+          </h2>
 
-      <div class="pt-16">
-        <TechnologiesList client:load />
-      </div>
-    </section>
+          <div class="pt-16">
+            <TechnologiesList client:load />
+          </div>
+        </section>
+      )
+    }
 
     <!-- ------------------------------------------------------------------- -->
     <!-- Recommendations -->
