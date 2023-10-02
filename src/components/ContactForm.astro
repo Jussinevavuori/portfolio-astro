@@ -8,6 +8,12 @@ import Button from "./Button.astro";
   method="POST"
   class="mx-auto max-w-lg flex flex-col gap-4"
 >
+  <!-- Hidden Web3Forms config -->
+  <input
+    type="hidden"
+    name="subject"
+    value="🛎️ Uusi viesti Portfoliosta - jussinevavuori.com"
+  />
   <input
     type="hidden"
     name="access_key"
@@ -19,6 +25,7 @@ import Button from "./Button.astro";
     value="https://jussinevavuori.com/thank-you"
   />
 
+  <!-- Public Web3Forms fields -->
   <div class="flex flex-col gap-2">
     <label for="input_name" class="text-black/70 text-sm"> Name</label>
     <input
@@ -51,6 +58,10 @@ import Button from "./Button.astro";
       required></textarea>
   </div>
 
+  <!-- Public Captcha -->
+  <div class="h-captcha" data-captcha="true"></div>
+
+  <!-- Public Submit -->
   <Button type="submit" class="mt-4" hasEndIcon>
     Send
     <SendIcon />

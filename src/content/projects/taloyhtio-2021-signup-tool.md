@@ -1,5 +1,5 @@
 ---
-title: Nexpenda
+title: Taloyhtiö 2021 Signup Tool
 description: Customized online signup tool for the taloyhtiö 2021 event, created as a React-based WordPress plugin
 image: /content/projects/taloyhtio-2021-signup-tool.png
 technologies:
