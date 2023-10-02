@@ -1,7 +1,7 @@
 ---
 id: 1603636
 title: "How to Deploy Astro on Google Cloud with Bitbucket."
-description: "This tutorial will show you how to deploy static Astro sites on Google Cloud. The deployment uses..."
+description: "Lighthouse score for improved SEO**   Note: This guide does not only apply to Astro but can be..."
 path: "/jussinevavuori/how-to-deploy-astro-on-google-cloud-with-bitbucket-26la"
 url: "https://dev.to/jussinevavuori/how-to-deploy-astro-on-google-cloud-with-bitbucket-26la"
 commentsCount: 0
@@ -12,7 +12,7 @@ coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--chhUrK2U--/c
 socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--HSf4PRcI--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/490hudrape48sjk6nljg.png"
 canonicalUrl: "https://dev.to/jussinevavuori/how-to-deploy-astro-on-google-cloud-with-bitbucket-26la"
 createdAt: 2023-09-18T09:41:38Z
-editedAt: 2023-09-18T09:49:41Z
+editedAt: 2023-09-22T07:23:27Z
 crosspostedAt: null
 publishedAt: 2023-09-18T09:41:37Z
 lastCommentAt: 2023-09-18T09:41:37Z
@@ -20,16 +20,7 @@ readingTimeMinutes: 12
 tags: ["astro", "googlecloud", "cicd", "webdev"]
 ---
 
-
-This tutorial will show you how to deploy **static Astro sites** on **Google Cloud**. The deployment uses _Google Cloud Storage_, _Google Cloud Load Balancer_, _Bitbucket pipelines_ and more to provide the **following features**:
-
-- **CDN**
-- **Static asset caching**
-- **Load balancing**
-- **Automated cache invalidations**
-- **Automated pipelines**
-- **Manual, automatic, scheduled and programmatic deployment options**
-- **Perfect Lighthouse score for improved SEO**
+ Lighthouse score for improved SEO**
 
 > **Note**: This guide **does not only apply to Astro** but can be applied and adapted to suit any static site deployment needs for any SSG codebase.
 
@@ -157,6 +148,12 @@ Configure the load balancer backend. Start by under **Backend services & backend
 
 You can skip configuring routing rules and optionally go to review and finalize. Once done, **click create**.
 
+#### 5.4. Enabling compression
+
+By default, your files are sent uncompressed. In order to further optimize and speed up your site, we enable compression. First, navigate to **Cloud CDN** under **Network services**. Select your backend bucket and **edit**.
+
+Under **cache performance**, select **Compression mode**: **Cutomatic** and save.
+
 ### 6. Connect your domain to the Load Balancer
 
 Open your created load balancer to **find the load balancer's IP address**. Then **go to your domain's DNS settings**. Create **required A records** to point to your load balancer's IP address. For example (given the example load balancer IP address `30.90.80.100`).
@@ -193,7 +190,7 @@ The Bitbucket pipelines script will need access to Google Cloud. We do this by c
 
 #### 9.1. Creating a service account for Bitbucket pipelines
 
-Navigate to **IAM & Admin** in Google Cloud Console, then to **Service Accounts**, then \*_Create a service account_ using the following options.
+Navigate to **IAM & Admin** in Google Cloud Console, then to **Service Accounts**, then **Create a service account** using the following options.
 
 <!-- prettier-ignore -->
 | Setting | Recommended value |
