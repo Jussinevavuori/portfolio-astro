@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import prefetch from "@astrojs/prefetch";
@@ -10,20 +10,29 @@ import robotsTxt from "astro-robots-txt";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind(), sitemap(), prefetch(), image({
-		serviceEntryPoint: '@astrojs/image/sharp'
-	}), svelte(), robotsTxt()],
-	site: "https://jussinevavuori.com",
-	output: "hybrid",
-	adapter: vercel(),
-	experimental: {
-		hybridOutput: true
-	},
-	markdown: {
-		shikiConfig: {
-			theme: "dracula",
-			langs: ["js", "jsx", "ts", "tsx", "astro"],
-			wrap: false,
-		}
-	}
+  integrations: [
+    tailwind(),
+    sitemap(),
+    prefetch(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+    svelte(),
+    robotsTxt(),
+  ],
+  site: "https://jussinevavuori.com",
+  output: "hybrid",
+  adapter: vercel({
+    webAnalytics: { enabled: true },
+  }),
+  experimental: {
+    hybridOutput: true,
+  },
+  markdown: {
+    shikiConfig: {
+      theme: "dracula",
+      langs: ["js", "jsx", "ts", "tsx", "astro"],
+      wrap: false,
+    },
+  },
 });
