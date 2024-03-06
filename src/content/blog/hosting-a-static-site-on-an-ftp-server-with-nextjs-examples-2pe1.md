@@ -4,18 +4,18 @@ title: "Hosting a static site on an FTP server with Next.js examples"
 description: "When building a statically generated site (SSG site) using Next.js or any other SSG framework, such..."
 path: "/jussinevavuori/hosting-a-static-site-on-an-ftp-server-with-nextjs-examples-2pe1"
 url: "https://dev.to/jussinevavuori/hosting-a-static-site-on-an-ftp-server-with-nextjs-examples-2pe1"
-commentsCount: 0
+commentsCount: 1
 publicReactionsCount: 8
 publishedTimestamp: 2022-07-25T10:24:35Z
 positiveReactionsCount: 8
-coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--hUuMcUTI--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nx6am6rd23mlwm5lmq00.png"
-socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--llv5YBex--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nx6am6rd23mlwm5lmq00.png"
+coverImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnx6am6rd23mlwm5lmq00.png"
+socialImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnx6am6rd23mlwm5lmq00.png"
 canonicalUrl: "https://dev.to/jussinevavuori/hosting-a-static-site-on-an-ftp-server-with-nextjs-examples-2pe1"
 createdAt: 2022-07-21T09:56:27Z
 editedAt: null
 crosspostedAt: null
 publishedAt: 2022-07-25T10:24:35Z
-lastCommentAt: 2022-07-25T10:24:35Z
+lastCommentAt: 2024-02-07T19:28:36Z
 readingTimeMinutes: 5
 tags: ["javascript", "nextjs", "devops"]
 ---

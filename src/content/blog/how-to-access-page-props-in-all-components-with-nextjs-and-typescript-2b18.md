@@ -8,8 +8,8 @@ commentsCount: 0
 publicReactionsCount: 3
 publishedTimestamp: 2022-07-01T11:17:02Z
 positiveReactionsCount: 3
-coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--_4_RkfDF--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/usalsr46sielhm61cddj.png"
-socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--LyMD1RYX--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/usalsr46sielhm61cddj.png"
+coverImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fusalsr46sielhm61cddj.png"
+socialImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fusalsr46sielhm61cddj.png"
 canonicalUrl: "https://dev.to/jussinevavuori/how-to-access-page-props-in-all-components-with-nextjs-and-typescript-2b18"
 createdAt: 2022-06-29T08:35:02Z
 editedAt: 2022-07-01T11:17:44Z

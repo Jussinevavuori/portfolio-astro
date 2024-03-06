@@ -8,8 +8,8 @@ commentsCount: 0
 publicReactionsCount: 5
 publishedTimestamp: 2022-08-01T12:59:00Z
 positiveReactionsCount: 5
-coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--k0-EjeLW--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sndm3sk4j8wfymi2to1a.png"
-socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--oa6QXpMK--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sndm3sk4j8wfymi2to1a.png"
+coverImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fsndm3sk4j8wfymi2to1a.png"
+socialImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fsndm3sk4j8wfymi2to1a.png"
 canonicalUrl: "https://dev.to/jussinevavuori/using-contentful-with-nextjs-part-1-2i0a"
 createdAt: 2022-08-01T08:13:54Z
 editedAt: 2022-08-18T15:11:54Z

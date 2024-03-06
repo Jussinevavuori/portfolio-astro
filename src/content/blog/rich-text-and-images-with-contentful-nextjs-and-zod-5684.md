@@ -8,8 +8,8 @@ commentsCount: 1
 publicReactionsCount: 1
 publishedTimestamp: 2022-08-18T09:09:00Z
 positiveReactionsCount: 1
-coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--tfHD2qTr--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y1xkldadvbc76ey1k8e7.png"
-socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--sn5yylVX--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y1xkldadvbc76ey1k8e7.png"
+coverImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fy1xkldadvbc76ey1k8e7.png"
+socialImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fy1xkldadvbc76ey1k8e7.png"
 canonicalUrl: "https://dev.to/jussinevavuori/rich-text-and-images-with-contentful-nextjs-and-zod-5684"
 createdAt: 2022-08-18T09:09:32Z
 editedAt: 2022-08-18T09:10:08Z

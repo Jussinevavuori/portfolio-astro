@@ -8,8 +8,8 @@ commentsCount: 0
 publicReactionsCount: 24
 publishedTimestamp: 2022-06-28T08:36:23Z
 positiveReactionsCount: 24
-coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--nR89K8H5--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g57qu96j60f4dv8gmcd3.png"
-socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--uelNLG9J--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/g57qu96j60f4dv8gmcd3.png"
+coverImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fg57qu96j60f4dv8gmcd3.png"
+socialImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fg57qu96j60f4dv8gmcd3.png"
 canonicalUrl: "https://dev.to/jussinevavuori/smarter-nextjs-api-routes-with-custom-createapiroute-function-29l5"
 createdAt: 2022-06-28T08:36:23Z
 editedAt: 2022-06-29T08:35:24Z

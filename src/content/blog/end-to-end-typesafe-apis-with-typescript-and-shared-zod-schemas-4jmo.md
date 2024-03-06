@@ -8,14 +8,14 @@ commentsCount: 1
 publicReactionsCount: 10
 publishedTimestamp: 2022-07-18T08:07:57Z
 positiveReactionsCount: 10
-coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--id6YAzI0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uk5zx81vw8u06vu43nax.png"
-socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--eLzMRoHO--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uk5zx81vw8u06vu43nax.png"
+coverImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fuk5zx81vw8u06vu43nax.png"
+socialImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fuk5zx81vw8u06vu43nax.png"
 canonicalUrl: "https://dev.to/jussinevavuori/end-to-end-typesafe-apis-with-typescript-and-shared-zod-schemas-4jmo"
 createdAt: 2022-07-08T14:13:53Z
 editedAt: null
 crosspostedAt: null
 publishedAt: 2022-07-18T08:07:57Z
-lastCommentAt: 2023-08-06T18:32:48Z
+lastCommentAt: 2023-10-26T19:22:35Z
 readingTimeMinutes: 7
 tags: ["typescript", "javascript", "webdev"]
 ---

@@ -8,8 +8,8 @@ commentsCount: 0
 publicReactionsCount: 15
 publishedTimestamp: 2022-07-11T07:04:33Z
 positiveReactionsCount: 15
-coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--2QC_mYeb--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9onlbuk78um15ekvsbnm.png"
-socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--VTmDdhU7--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9onlbuk78um15ekvsbnm.png"
+coverImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9onlbuk78um15ekvsbnm.png"
+socialImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F9onlbuk78um15ekvsbnm.png"
 canonicalUrl: "https://dev.to/jussinevavuori/persist-your-state-anywhere-with-createpersistentitem-with-react-examples-1acc"
 createdAt: 2022-07-06T09:04:42Z
 editedAt: 2022-07-11T07:43:03Z

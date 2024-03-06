@@ -8,8 +8,8 @@ commentsCount: 0
 publicReactionsCount: 1
 publishedTimestamp: 2023-09-18T09:41:37Z
 positiveReactionsCount: 1
-coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--chhUrK2U--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/490hudrape48sjk6nljg.png"
-socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--HSf4PRcI--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/490hudrape48sjk6nljg.png"
+coverImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F490hudrape48sjk6nljg.png"
+socialImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F490hudrape48sjk6nljg.png"
 canonicalUrl: "https://dev.to/jussinevavuori/how-to-deploy-astro-on-google-cloud-with-bitbucket-26la"
 createdAt: 2023-09-18T09:41:38Z
 editedAt: 2023-09-22T07:23:27Z

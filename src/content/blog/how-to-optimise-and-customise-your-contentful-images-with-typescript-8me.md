@@ -8,8 +8,8 @@ commentsCount: 0
 publicReactionsCount: 5
 publishedTimestamp: 2022-08-12T14:16:30Z
 positiveReactionsCount: 5
-coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--uVXBS-oR--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cm4u82ijn7auyk17703w.png"
-socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--4FmdrsLf--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cm4u82ijn7auyk17703w.png"
+coverImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fcm4u82ijn7auyk17703w.png"
+socialImage: "https://media.dev.to/cdn-cgi/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fcm4u82ijn7auyk17703w.png"
 canonicalUrl: "https://dev.to/jussinevavuori/how-to-optimise-and-customise-your-contentful-images-with-typescript-8me"
 createdAt: 2022-08-12T14:16:31Z
 editedAt: null
