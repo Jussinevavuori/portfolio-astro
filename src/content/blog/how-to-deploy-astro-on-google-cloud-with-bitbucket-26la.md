@@ -5,9 +5,9 @@ description: "Lighthouse score for improved SEO**   Note: This guide does not on
 path: "/jussinevavuori/how-to-deploy-astro-on-google-cloud-with-bitbucket-26la"
 url: "https://dev.to/jussinevavuori/how-to-deploy-astro-on-google-cloud-with-bitbucket-26la"
 commentsCount: 0
-publicReactionsCount: 0
+publicReactionsCount: 1
 publishedTimestamp: 2023-09-18T09:41:37Z
-positiveReactionsCount: 0
+positiveReactionsCount: 1
 coverImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--chhUrK2U--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/490hudrape48sjk6nljg.png"
 socialImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--HSf4PRcI--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/490hudrape48sjk6nljg.png"
 canonicalUrl: "https://dev.to/jussinevavuori/how-to-deploy-astro-on-google-cloud-with-bitbucket-26la"

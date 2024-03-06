@@ -1,53 +1,45 @@
+const overrides: Record<string, string> = {
+  "next.js": "devicon:nextjs",
+  stripe: "logos:stripe",
+  "node.js": "devicon:nodejs",
+  contentful: "logos:contentful",
+  "dev.to": "simple-icons:devdotto",
+  firebase: "logos:firebase",
+  firestore: "vscode-icons:file-type-firestore",
+  jitsi: "arcticons:jitsimeet",
+  graphql: "logos:graphql",
+  scrum: "simple-icons:scrumalliance",
+  "google sheets": "devicon:google",
+  "google apps script": "devicon:google",
+  "socket.io": "logos:socket-io",
+  "next auth": "simple-icons:auth0",
+  sendgrid: "logos:sendgrid-icon",
+  twilio: "logos:twilio-icon",
+  vue: "logos:vue",
+  nuxt: "logos:nuxt-icon",
+  aws: "logos:aws",
+  tailwind: "devicon:tailwindcss",
+  drizzle: "simple-icons:drizzle",
+  planetscale: "logos:planetscale",
+  resend: "simple-icons:resend",
+  clerk: "simple-icons:clerk",
+  "shadcn/ui": "simple-icons:shadcnui",
+  "google maps api": "logos:google-maps",
+};
+
+// https://icon-sets.iconify.design/
 export function getTechnologyIconName(technology: string) {
-  switch (technology.toLowerCase()) {
-    case "next.js":
-      return "cib:next-js";
-    case "stripe":
-      return "logos:stripe";
-    case "node.js":
-      return "devicon:nodejs";
-    case "contentful":
-      return "logos:contentful";
-    case "dev.to":
-      return "simple-icons:devdotto";
-    case "firebase":
-      return "logos:firebase";
-    case "firestore":
-      return "vscode-icons:file-type-firestore";
-    case "jitsi":
-      return "arcticons:jitsimeet";
-    case "graphql":
-      return "logos:graphql";
-    case "scrum":
-      return "simple-icons:scrumalliance";
-    case "google sheets":
-      return "devicon:google";
-    case "google apps script":
-      return "devicon:google";
-    case "socket.io":
-      return "logos:socket-io";
-    case "next auth":
-      return "simple-icons:auth0";
-    case "sendgrid":
-      return "logos:sendgrid-icon";
-    case "twilio":
-      return "logos:twilio-icon";
-    case "vue":
-      return "logos:vue";
-    case "nuxt":
-      return "logos:nuxt-icon";
-    case "aws":
-      return "logos:aws";
+  // Check manual overrides
+  const override = overrides[technology.toLowerCase()];
+  if (override) return override;
 
-    default:
-      // Adobe case
-      if (technology.toLowerCase().startsWith("adobe ")) {
-        return `logos:${technology.toLowerCase().replace(/\s/g, "-")}`;
-      }
-
-      return `devicon:${technology
-        .toLowerCase()
-        .replace(/\./g, "dot")
-        .replace(/\s+/g, "")}`;
+  // Adobe case
+  if (technology.toLowerCase().startsWith("adobe ")) {
+    return `logos:${technology.toLowerCase().replace(/\s/g, "-")}`;
   }
+
+  return `devicon:${technology
+    .toLowerCase()
+    .replace(/\./g, "dot")
+    .replace(/\s+/g, "")}`;
 }

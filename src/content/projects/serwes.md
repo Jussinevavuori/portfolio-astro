@@ -9,7 +9,7 @@ technologies:
 		"TypeScript",
 		"Prisma",
 		"tRPC",
-		"TailwindCSS",
+		"Tailwind",
 		"Google Cloud",
 		"Stripe",
 		"PostgreSQL",

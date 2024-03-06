@@ -21,6 +21,7 @@ import TechnologiesList from "src/components/TechnologiesList.svelte";
 const allProjects = await getCollection("projects");
 const recommendedProjects = [...allProjects]
   .filter((project) => project.data.hasPage)
+  .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime())
   .sort((a, b) => b.data.priority - a.data.priority)
   .slice(0, 3);
 
@@ -191,24 +192,6 @@ const latestBlogs = [...blogs]
         <ButtonLink href="/projects" fullWidth>View all projects</ButtonLink>
       </div>
     </section>
-
-    <!-- ------------------------------------------------------------------- -->
-    <!-- Technologies -->
-    <!-- ------------------------------------------------------------------- -->
-
-    {
-      process.env.NODE_ENV === "development" && (
-        <section id="technologies" class="py-36">
-          <h2 class="relative text-4xl font-bold text-center">
-            My core technologies.
-          </h2>
-
-          <div class="pt-16">
-            <TechnologiesList client:load />
-          </div>
-        </section>
-      )
-    }
 
     <!-- ------------------------------------------------------------------- -->
     <!-- Recommendations -->

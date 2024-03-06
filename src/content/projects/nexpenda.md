@@ -17,7 +17,7 @@ technologies:
     "Vercel",
     "Redux",
     "Docker",
-    "TailwindCSS",
+    "Tailwind",
   ]
 projectUrl: "https://nexpenda.com"
 githubUrl: https://github.com/Jussinevavuori/nexpenda-next

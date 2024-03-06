@@ -23,7 +23,7 @@ const projectsCollection = defineCollection({
     endDate: z.date().optional(),
     priority: z.number(),
     hasPage: z.boolean(),
-    type: z.enum(["personal", "client", "school"]),
+    type: z.enum(["personal", "startup", "client", "school"]),
     teamSize: z.number().int().positive(),
   }),
 });
@@ -54,17 +54,17 @@ export const blogCollection = defineCollection({
   }),
 });
 
-export const technologiesCollection = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    technologies: z.string().array(),
-  }),
-});
+// export const technologiesCollection = defineCollection({
+//   type: "content",
+//   schema: z.object({
+//     title: z.string(),
+//     technologies: z.string().array(),
+//   }),
+// });
 
 export const collections = {
   recommendations: recommendationsCollection,
-  technologies: technologiesCollection,
+  // technologies: technologiesCollection,
   projects: projectsCollection,
   blog: blogCollection,
 };

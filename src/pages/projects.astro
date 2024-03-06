@@ -11,6 +11,7 @@ const allProjects = await getCollection("projects");
 
 const projectsWithPages = [...allProjects]
   .filter((project) => project.data.hasPage)
+  .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime())
   .sort((a, b) => b.data.priority - a.data.priority);
 
 const projectsWithoutPages = [...allProjects]

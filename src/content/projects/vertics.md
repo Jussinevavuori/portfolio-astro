@@ -4,9 +4,9 @@ description: Developed, designed and created content for Vertics' new homepage a
 image: /content/projects/vertics.jpeg
 technologies:
   [
+		"Astro",
 		"Vue",
-		"Nuxt",
-		"TailwindCSS",
+		"Tailwind",
     "WordPress",
     "Typescript",
   ]

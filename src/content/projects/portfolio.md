@@ -6,7 +6,7 @@ technologies:
   [
     "Astro",
     "Svelte",
-    "TailwindCSS",
+    "Tailwind",
     "Typescript",
     "Next.js",
     "Contentful",
