@@ -6,12 +6,15 @@ export interface Props extends HTMLAttributes<"a"> {
   fullWidth?: boolean;
   hasStartIcon?: boolean;
   hasEndIcon?: boolean;
+  target?: "blank";
+  className?: string;
 }
 const {
   variant = "primary",
   fullWidth,
   hasStartIcon,
   hasEndIcon,
+  className,
   ...anchorProps
 } = Astro.props;
 ---
@@ -29,6 +32,7 @@ const {
     fullWidth ? "w-full" : "",
     "after:absolute after:-inset-px after:bg-primary-800 after:opacity-0 after:rounded-lg after:transition-opacity after:duration-300",
     "hover:after:opacity-10 focus:after:opacity-10 hover:after:transition-none",
+    className,
   ]}
   {...anchorProps}
 >

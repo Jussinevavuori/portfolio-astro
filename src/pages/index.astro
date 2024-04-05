@@ -62,12 +62,23 @@ const latestBlogs = [...blogs]
         <span class="text-primary-500 font-medium">high quality.</span>
       </p>
 
-      <div class="flex items-center flex-wrap gap-y-4 gap-x-8">
+      <div class="flex items-center flex-wrap gap-y-4 gap-x-4">
         <ButtonLink href="#contact" hasStartIcon>
           <Edit3Icon />
           Contact Me
         </ButtonLink>
-        <ButtonLink href="/projects" variant="secondary">
+        <ButtonLink
+          href="/cv/CV_Jussi_Nevavuori_2024_03.pdf"
+          variant="secondary"
+          target="blank"
+        >
+          Download CV
+        </ButtonLink>
+        <ButtonLink
+          href="/projects"
+          className="text-emerald-600"
+          variant="text"
+        >
           View my Work
         </ButtonLink>
       </div>
